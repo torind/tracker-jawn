@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "428021B31EC8D6FE003E8F96"
+               BuildableName = "Tracker Jawn.app"
+               BlueprintName = "Tracker Jawn"
+               ReferencedContainer = "container:Tracker Jawn.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "428021C71EC8D6FE003E8F96"
+               BuildableName = "Tracker JawnTests.xctest"
+               BlueprintName = "Tracker JawnTests"
+               ReferencedContainer = "container:Tracker Jawn.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "428021D21EC8D6FE003E8F96"
+               BuildableName = "Tracker JawnUITests.xctest"
+               BlueprintName = "Tracker JawnUITests"
+               ReferencedContainer = "container:Tracker Jawn.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "428021B31EC8D6FE003E8F96"
+            BuildableName = "Tracker Jawn.app"
+            BlueprintName = "Tracker Jawn"
+            ReferencedContainer = "container:Tracker Jawn.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "428021B31EC8D6FE003E8F96"
+            BuildableName = "Tracker Jawn.app"
+            BlueprintName = "Tracker Jawn"
+            ReferencedContainer = "container:Tracker Jawn.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "428021B31EC8D6FE003E8F96"
+            BuildableName = "Tracker Jawn.app"
+            BlueprintName = "Tracker Jawn"
+            ReferencedContainer = "container:Tracker Jawn.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
