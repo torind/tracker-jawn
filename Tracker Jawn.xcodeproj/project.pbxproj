@@ -15,6 +15,8 @@
 		428021E61EC8E452003E8F96 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021E51EC8E452003E8F96 /* MainViewController.swift */; };
 		428021E81EC93044003E8F96 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021E71EC93044003E8F96 /* MainTabBarController.swift */; };
 		428021F21EC938D8003E8F96 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021F11EC938D8003E8F96 /* HistoryViewController.swift */; };
+		428021FC1ECA3DFA003E8F96 /* NumberKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021FB1ECA3DFA003E8F96 /* NumberKey.swift */; };
+		428021FE1ECA4C50003E8F96 /* Literals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021FD1ECA4C50003E8F96 /* Literals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		428021E51EC8E452003E8F96 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		428021E71EC93044003E8F96 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		428021F11EC938D8003E8F96 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = ../HistoryViewController.swift; sourceTree = "<group>"; };
+		428021FB1ECA3DFA003E8F96 /* NumberKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberKey.swift; sourceTree = "<group>"; };
+		428021FD1ECA4C50003E8F96 /* Literals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Literals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				428021B71EC8D6FE003E8F96 /* AppDelegate.swift */,
 				428021F11EC938D8003E8F96 /* HistoryViewController.swift */,
 				428021E51EC8E452003E8F96 /* MainViewController.swift */,
+				428021FB1ECA3DFA003E8F96 /* NumberKey.swift */,
+				428021FD1ECA4C50003E8F96 /* Literals.swift */,
 				428021E71EC93044003E8F96 /* MainTabBarController.swift */,
 				428021C01EC8D6FE003E8F96 /* LaunchScreen.storyboard */,
 				428021C31EC8D6FE003E8F96 /* Info.plist */,
@@ -264,10 +270,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				428021FC1ECA3DFA003E8F96 /* NumberKey.swift in Sources */,
 				428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */,
 				428021E61EC8E452003E8F96 /* MainViewController.swift in Sources */,
 				428021E81EC93044003E8F96 /* MainTabBarController.swift in Sources */,
 				428021F21EC938D8003E8F96 /* HistoryViewController.swift in Sources */,
+				428021FE1ECA4C50003E8F96 /* Literals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

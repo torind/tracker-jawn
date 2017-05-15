@@ -16,6 +16,8 @@ class MainViewController: UIViewController {
         view.addSubview(imageView)
         view.addSubview(dailyUsageLabel)
         view.addSubview(dailyUsageCount)
+        print("Running")
+        view.addSubview(numberpad)
         view.setNeedsUpdateConstraints()
     }
     
@@ -23,6 +25,7 @@ class MainViewController: UIViewController {
         imageViewConstraints()
         dailyUsageLabelConstraints()
         dailyUsageCountConstraints()
+        numberpadConstraints()
         super.updateViewConstraints()
     }
     
@@ -49,6 +52,12 @@ class MainViewController: UIViewController {
         view.text = "$53.14"
         view.font = UIFont.boldSystemFont(ofSize: 24.0)
         view.textAlignment = .center
+        return view
+    }()
+    
+    lazy var numberpad : UIView! = {
+        let view = NumberKey(label : "1")
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -150,6 +159,50 @@ class MainViewController: UIViewController {
             multiplier: 0.4,
             constant: 0.0)
             .isActive = true
+        
+    }
+    
+    func numberpadConstraints() {
+        NSLayoutConstraint(
+            item: numberpad,
+            attribute: .centerX,
+            relatedBy: .equal,
+            toItem: view,
+            attribute: .centerX,
+            multiplier: 1.0,
+            constant: 0.0)
+            .isActive = true
+        
+        NSLayoutConstraint(
+            item: numberpad,
+            attribute: .top,
+            relatedBy: .equal,
+            toItem: dailyUsageCount,
+            attribute: .bottom,
+            multiplier: 1.0,
+            constant: 20.0)
+            .isActive = true
+        
+        NSLayoutConstraint(
+            item: numberpad,
+            attribute: .width,
+            relatedBy: .equal,
+            toItem: nil,
+            attribute: .notAnAttribute,
+            multiplier: 1.0,
+            constant: 60)
+            .isActive = true
+        
+        NSLayoutConstraint(
+            item: numberpad,
+            attribute: .height,
+            relatedBy: .equal,
+            toItem: nil,
+            attribute: .notAnAttribute,
+            multiplier: 1.0,
+            constant: 60)
+            .isActive = true
+        
         
     }
 
