@@ -20,11 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         
-
         let mainViewController = MainViewController()
-        // Set the root view controller of the app's window
-        window!.rootViewController = mainViewController
-        // Make the window visible
+        let historyViewController = HistoryViewController()
+        
+        let tabBarController = MainTabBarController()
+        let viewControllers = [mainViewController, historyViewController]
+        
+        tabBarController.viewControllers = viewControllers
+        
+        mainViewController.tabBarItem = UITabBarItem(
+            title: "Home",
+            image: UIImage(named: "pizza-icon"),
+            tag: 1)
+        
+        historyViewController.tabBarItem = UITabBarItem(
+            title: "History",
+            image: UIImage(named: "pep-icon"),
+            tag: 2)
+        
+        window!.rootViewController = tabBarController
         window!.makeKeyAndVisible()
         
         return true

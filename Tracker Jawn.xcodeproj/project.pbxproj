@@ -13,6 +13,8 @@
 		428021CD1EC8D6FE003E8F96 /* Tracker_JawnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021CC1EC8D6FE003E8F96 /* Tracker_JawnTests.swift */; };
 		428021D81EC8D6FE003E8F96 /* Tracker_JawnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021D71EC8D6FE003E8F96 /* Tracker_JawnUITests.swift */; };
 		428021E61EC8E452003E8F96 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021E51EC8E452003E8F96 /* MainViewController.swift */; };
+		428021E81EC93044003E8F96 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021E71EC93044003E8F96 /* MainTabBarController.swift */; };
+		428021F21EC938D8003E8F96 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021F11EC938D8003E8F96 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		428021D71EC8D6FE003E8F96 /* Tracker_JawnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker_JawnUITests.swift; sourceTree = "<group>"; };
 		428021D91EC8D6FE003E8F96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		428021E51EC8E452003E8F96 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		428021E71EC93044003E8F96 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		428021F11EC938D8003E8F96 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = ../HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				428021B71EC8D6FE003E8F96 /* AppDelegate.swift */,
+				428021F11EC938D8003E8F96 /* HistoryViewController.swift */,
 				428021E51EC8E452003E8F96 /* MainViewController.swift */,
-				428021BE1EC8D6FE003E8F96 /* Assets.xcassets */,
+				428021E71EC93044003E8F96 /* MainTabBarController.swift */,
 				428021C01EC8D6FE003E8F96 /* LaunchScreen.storyboard */,
 				428021C31EC8D6FE003E8F96 /* Info.plist */,
+				428021BE1EC8D6FE003E8F96 /* Assets.xcassets */,
 			);
 			path = "Tracker Jawn";
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 			files = (
 				428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */,
 				428021E61EC8E452003E8F96 /* MainViewController.swift in Sources */,
+				428021E81EC93044003E8F96 /* MainTabBarController.swift in Sources */,
+				428021F21EC938D8003E8F96 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +508,7 @@
 				428021DE1EC8D6FE003E8F96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		428021DF1EC8D6FE003E8F96 /* Build configuration list for PBXNativeTarget "Tracker JawnTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +517,7 @@
 				428021E11EC8D6FE003E8F96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		428021E21EC8D6FE003E8F96 /* Build configuration list for PBXNativeTarget "Tracker JawnUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +526,7 @@
 				428021E41EC8D6FE003E8F96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
