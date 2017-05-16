@@ -8,15 +8,14 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
-
+class MainViewController: UIViewController, NumberpadTouchDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.addSubview(imageView)
         view.addSubview(dailyUsageLabel)
         view.addSubview(dailyUsageCount)
-        print("Running")
+        view.addSubview(userInputLabel)
         view.addSubview(numberpad)
         view.setNeedsUpdateConstraints()
     }
@@ -25,8 +24,15 @@ class MainViewController: UIViewController {
         imageViewConstraints()
         dailyUsageLabelConstraints()
         dailyUsageCountConstraints()
+        userInputConstraints()
         numberpadConstraints()
         super.updateViewConstraints()
+    }
+    
+    // ~~~~ HANDLER METHODS ~~~~ //
+    func handleTouch(tag : Int) {
+        let chars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", ""]
+        userInputLabel.processInput(char: chars[tag])
     }
     
     // ~~~~ SUBVIEWS ~~~~ //
@@ -35,7 +41,6 @@ class MainViewController: UIViewController {
         view.image = UIImage(named: "tracker-jawn-logo")
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = UIViewContentMode.scaleAspectFit
-        //view.backgroundColor = UIColor.green
         return view
     }()
     
@@ -49,18 +54,25 @@ class MainViewController: UIViewController {
     lazy var dailyUsageCount : UILabel! = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "$53.14"
         view.font = UIFont.boldSystemFont(ofSize: 24.0)
         view.textAlignment = .center
+        view.text = "$  .  "
         return view
     }()
     
-    lazy var numberpad : UIView! = {
-        let view = NumberKey(label : "1")
+    lazy var userInputLabel : InputLabelView! = {
+        let view = InputLabelView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
+    lazy var numberpad : UIView! = {
+        var view = NumberPad()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.touchDelegate = self
+        return view
+    }()
+
     
     // ~~~~ CONSTRAINTS ~~~~ //
     func imageViewConstraints() {
@@ -92,7 +104,7 @@ class MainViewController: UIViewController {
             toItem: view,
             attribute: .top,
             multiplier: 1.0,
-            constant: 40.0)
+            constant: 10.0)
             .isActive = true
     }
     
@@ -114,7 +126,7 @@ class MainViewController: UIViewController {
             toItem: imageView,
             attribute: .bottom,
             multiplier: 1.0,
-            constant: -10.0)
+            constant: -25.0)
             .isActive = true
         
         NSLayoutConstraint(
@@ -162,6 +174,48 @@ class MainViewController: UIViewController {
         
     }
     
+    func userInputConstraints() {
+        NSLayoutConstraint(
+            item: userInputLabel,
+            attribute: .centerX,
+            relatedBy: .equal,
+            toItem: view,
+            attribute: .centerX,
+            multiplier: 1.0,
+            constant: 0.0)
+            .isActive = true
+        
+        NSLayoutConstraint(
+            item: userInputLabel,
+            attribute: .top,
+            relatedBy: .equal,
+            toItem: dailyUsageCount,
+            attribute: .bottom,
+            multiplier: 1.0,
+            constant: 10.0)
+            .isActive = true
+        
+        NSLayoutConstraint(
+            item: userInputLabel,
+            attribute: .width,
+            relatedBy: .equal,
+            toItem: view,
+            attribute: .width,
+            multiplier: 1.0,
+            constant: -200)
+            .isActive = true
+        
+        NSLayoutConstraint(
+            item: userInputLabel,
+            attribute: .height,
+            relatedBy: .equal,
+            toItem: nil,
+            attribute: .notAnAttribute,
+            multiplier: 1.0,
+            constant: 40.0)
+            .isActive = true
+    }
+    
     func numberpadConstraints() {
         NSLayoutConstraint(
             item: numberpad,
@@ -177,7 +231,7 @@ class MainViewController: UIViewController {
             item: numberpad,
             attribute: .top,
             relatedBy: .equal,
-            toItem: dailyUsageCount,
+            toItem: userInputLabel,
             attribute: .bottom,
             multiplier: 1.0,
             constant: 20.0)
@@ -187,24 +241,24 @@ class MainViewController: UIViewController {
             item: numberpad,
             attribute: .width,
             relatedBy: .equal,
-            toItem: nil,
-            attribute: .notAnAttribute,
+            toItem: view,
+            attribute: .width,
             multiplier: 1.0,
-            constant: 60)
+            constant: -120.0)
             .isActive = true
         
         NSLayoutConstraint(
             item: numberpad,
-            attribute: .height,
+            attribute: .bottom,
             relatedBy: .equal,
-            toItem: nil,
-            attribute: .notAnAttribute,
+            toItem: view,
+            attribute: .bottom,
             multiplier: 1.0,
-            constant: 60)
+            constant: -60.0)
             .isActive = true
-        
-        
     }
+}
 
-
+protocol NumberpadTouchDelegate {
+    func handleTouch(tag : Int) // ...or class methods
 }

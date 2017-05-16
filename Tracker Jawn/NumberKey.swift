@@ -12,10 +12,15 @@ import CoreGraphics
 class NumberKey: UIView {
     let label = UILabel()
     let circleLayer = CAShapeLayer()
+    var text : String
+    let XPADDING = NumberPad.XPADDING
+    let YPADDING = NumberPad.YPADDING
     
     init(frame: CGRect, label: String) {
+        text = label
         super.init(frame: frame)
-        addBehavior(text : label)
+        addText(text : label)
+        addOutline()
     }
     
     convenience init() {
@@ -30,14 +35,16 @@ class NumberKey: UIView {
         fatalError("This class does not support NSCoding")
     }
     
-    func addBehavior(text : String) {
+    func addText(text: String) {
         label.text = text
         let fontDescriptor = UIFontDescriptor(fontAttributes: [UIFontWeightTrait : 1.5])
         label.font = UIFont(descriptor: fontDescriptor, size: 40)
         label.textAlignment = .center
         label.textColor = Constants.THEME_COLOR
         self.addSubview(label)
-        
+    }
+    
+    func addOutline() {
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: 50,y: 50), radius: 50, startAngle: 0, endAngle: CGFloat(M_PI * 2), clockwise: true)
         
         circleLayer.path = circlePath.cgPath
@@ -50,18 +57,21 @@ class NumberKey: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-
-        label.frame.size = CGSize(width: frame.width, height: frame.height)
-        label.frame.origin = CGPoint(x: 0, y: 0)
+        label.frame.size = CGSize(width: frame.width - CGFloat(2 * XPADDING), height: frame.height - CGFloat(2 * YPADDING))
+        label.frame.origin = CGPoint(x: XPADDING, y: YPADDING)
         
-        circleLayer.frame.size = CGSize(width: frame.width, height: frame.height)
-        circleLayer.frame.origin = CGPoint(x: 0, y: 0)
+        circleLayer.frame.size = CGSize(width: frame.width - CGFloat(2 * XPADDING), height: frame.height - CGFloat(2 * YPADDING))
+        circleLayer.frame.origin = CGPoint(x: XPADDING, y: YPADDING)
         drawCircleContainer()
     }
     
     // draw new circle container based on frame dimensions
     func drawCircleContainer() {
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: frame.width / 2,y: frame.height / 2), radius: frame.width / 2, startAngle: 0, endAngle: CGFloat(M_PI * 2), clockwise: true)
+        let circlePath = UIBezierPath(
+            arcCenter: CGPoint(x: circleLayer.frame.width / 2,y: circleLayer.frame.height / 2),
+            radius: (circleLayer.frame.height / 2) - CGFloat(YPADDING),
+            startAngle: 0, endAngle: CGFloat(M_PI * 2),
+            clockwise: true)
         circleLayer.path = circlePath.cgPath
     }
 }

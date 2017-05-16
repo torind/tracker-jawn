@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		425C5FFE1ECA8A93009DE6DD /* InputLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C5FFD1ECA8A93009DE6DD /* InputLabelView.swift */; };
+		425C60021ECAC37E009DE6DD /* NumberpadTouchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60011ECAC37E009DE6DD /* NumberpadTouchDelegate.swift */; };
+		425C60051ECACF78009DE6DD /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60041ECACF78009DE6DD /* ImageKey.swift */; };
+		425C60071ECADA81009DE6DD /* BalanceHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60061ECADA81009DE6DD /* BalanceHistoryModel.swift */; };
 		428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021B71EC8D6FE003E8F96 /* AppDelegate.swift */; };
 		428021BF1EC8D6FE003E8F96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 428021BE1EC8D6FE003E8F96 /* Assets.xcassets */; };
 		428021C21EC8D6FE003E8F96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428021C01EC8D6FE003E8F96 /* LaunchScreen.storyboard */; };
@@ -17,6 +21,7 @@
 		428021F21EC938D8003E8F96 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021F11EC938D8003E8F96 /* HistoryViewController.swift */; };
 		428021FC1ECA3DFA003E8F96 /* NumberKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021FB1ECA3DFA003E8F96 /* NumberKey.swift */; };
 		428021FE1ECA4C50003E8F96 /* Literals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021FD1ECA4C50003E8F96 /* Literals.swift */; };
+		428022001ECA6445003E8F96 /* NumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021FF1ECA6445003E8F96 /* NumberPad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		425C5FFD1ECA8A93009DE6DD /* InputLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputLabelView.swift; path = ../InputLabelView.swift; sourceTree = "<group>"; };
+		425C60011ECAC37E009DE6DD /* NumberpadTouchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberpadTouchDelegate.swift; sourceTree = "<group>"; };
+		425C60041ECACF78009DE6DD /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
+		425C60061ECADA81009DE6DD /* BalanceHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceHistoryModel.swift; sourceTree = "<group>"; };
 		428021B41EC8D6FE003E8F96 /* Tracker Jawn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tracker Jawn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		428021B71EC8D6FE003E8F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		428021BE1EC8D6FE003E8F96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		428021BE1EC8D6FE003E8F96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Tracker Jawn/Assets.xcassets"; sourceTree = "<group>"; };
 		428021C11EC8D6FE003E8F96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		428021C31EC8D6FE003E8F96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		428021C81EC8D6FE003E8F96 /* Tracker JawnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tracker JawnTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +62,7 @@
 		428021F11EC938D8003E8F96 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = ../HistoryViewController.swift; sourceTree = "<group>"; };
 		428021FB1ECA3DFA003E8F96 /* NumberKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberKey.swift; sourceTree = "<group>"; };
 		428021FD1ECA4C50003E8F96 /* Literals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Literals.swift; sourceTree = "<group>"; };
+		428021FF1ECA6445003E8F96 /* NumberPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +90,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		425C5FFF1ECA8B2B009DE6DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				425C5FFD1ECA8A93009DE6DD /* InputLabelView.swift */,
+				428021FB1ECA3DFA003E8F96 /* NumberKey.swift */,
+				425C60041ECACF78009DE6DD /* ImageKey.swift */,
+				428021FF1ECA6445003E8F96 /* NumberPad.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		425C60001ECA8B48009DE6DD /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				428021FD1ECA4C50003E8F96 /* Literals.swift */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		425C60031ECAC388009DE6DD /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				425C60011ECAC37E009DE6DD /* NumberpadTouchDelegate.swift */,
+			);
+			name = Interfaces;
+			sourceTree = "<group>";
+		};
+		425C60081ECADA88009DE6DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				425C60061ECADA81009DE6DD /* BalanceHistoryModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		428021AB1EC8D6FD003E8F96 = {
 			isa = PBXGroup;
 			children = (
 				428021B61EC8D6FE003E8F96 /* Tracker Jawn */,
+				428021BE1EC8D6FE003E8F96 /* Assets.xcassets */,
 				428021CB1EC8D6FE003E8F96 /* Tracker JawnTests */,
 				428021D61EC8D6FE003E8F96 /* Tracker JawnUITests */,
 				428021B51EC8D6FE003E8F96 /* Products */,
@@ -106,12 +152,13 @@
 				428021B71EC8D6FE003E8F96 /* AppDelegate.swift */,
 				428021F11EC938D8003E8F96 /* HistoryViewController.swift */,
 				428021E51EC8E452003E8F96 /* MainViewController.swift */,
-				428021FB1ECA3DFA003E8F96 /* NumberKey.swift */,
-				428021FD1ECA4C50003E8F96 /* Literals.swift */,
 				428021E71EC93044003E8F96 /* MainTabBarController.swift */,
 				428021C01EC8D6FE003E8F96 /* LaunchScreen.storyboard */,
 				428021C31EC8D6FE003E8F96 /* Info.plist */,
-				428021BE1EC8D6FE003E8F96 /* Assets.xcassets */,
+				425C60081ECADA88009DE6DD /* Models */,
+				425C5FFF1ECA8B2B009DE6DD /* Views */,
+				425C60031ECAC388009DE6DD /* Interfaces */,
+				425C60001ECA8B48009DE6DD /* Misc */,
 			);
 			path = "Tracker Jawn";
 			sourceTree = "<group>";
@@ -271,10 +318,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				428021FC1ECA3DFA003E8F96 /* NumberKey.swift in Sources */,
+				425C60051ECACF78009DE6DD /* ImageKey.swift in Sources */,
+				428022001ECA6445003E8F96 /* NumberPad.swift in Sources */,
 				428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */,
+				425C5FFE1ECA8A93009DE6DD /* InputLabelView.swift in Sources */,
 				428021E61EC8E452003E8F96 /* MainViewController.swift in Sources */,
+				425C60071ECADA81009DE6DD /* BalanceHistoryModel.swift in Sources */,
 				428021E81EC93044003E8F96 /* MainTabBarController.swift in Sources */,
 				428021F21EC938D8003E8F96 /* HistoryViewController.swift in Sources */,
+				425C60021ECAC37E009DE6DD /* NumberpadTouchDelegate.swift in Sources */,
 				428021FE1ECA4C50003E8F96 /* Literals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
