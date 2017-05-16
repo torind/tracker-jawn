@@ -43,24 +43,7 @@ class InputLabelView: UIView {
         label.text = "$ .  "
         self.addSubview(label)
     }
-    
-    func processInput(char : String) {
-        inputChars = inputChars + char
-        let inputLength = inputChars.characters.count
-        switch(inputLength) {
-        case 0 :
-            label.text = "$ .  "
-        case 1 :
-            label.text = "$ . " + inputChars
-        case 2 :
-            label.text = "$ ." + inputChars
-        default :
-            let index = inputChars.index(inputChars.endIndex, offsetBy: -2)
-            let decimals = inputChars.substring(from: index)
-            let dollars = inputChars.substring(to: index)
-            label.text = "$" + dollars + "." + decimals
-        }
-    }
+
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -70,6 +53,10 @@ class InputLabelView: UIView {
         outline.frame.origin = CGPoint(x: 0.0, y: 0.0)
         label.frame.size = CGSize(width: frame.width - 2 * LABEL_PADDING, height: frame.height - 2 * LABEL_PADDING)
         label.frame.origin = CGPoint(x: LABEL_PADDING, y: LABEL_PADDING)
+    }
+    
+    func setText(text : String) {
+        label.text = text
     }
 
 

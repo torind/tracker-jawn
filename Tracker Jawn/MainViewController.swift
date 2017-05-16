@@ -9,9 +9,11 @@
 import UIKit
 
 class MainViewController: UIViewController, NumberpadTouchDelegate {
+    var model : BalanceHistory?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        model = BalanceHistory()
         view.addSubview(imageView)
         view.addSubview(dailyUsageLabel)
         view.addSubview(dailyUsageCount)
@@ -32,7 +34,18 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
     // ~~~~ HANDLER METHODS ~~~~ //
     func handleTouch(tag : Int) {
         let chars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", ""]
-        userInputLabel.processInput(char: chars[tag])
+        let newInputDisplay : String
+        print(tag)
+        switch (tag) {
+        case 9 :
+            newInputDisplay = model!.backspace()
+        case 11 :
+            newInputDisplay = model!.submitInput()
+        default :
+            newInputDisplay = model!.processInput(char: chars[tag])
+        }
+        print(newInputDisplay)
+        userInputLabel.setText(text: newInputDisplay)
     }
     
     // ~~~~ SUBVIEWS ~~~~ //
