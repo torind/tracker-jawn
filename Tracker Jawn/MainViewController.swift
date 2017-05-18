@@ -9,17 +9,29 @@
 import UIKit
 
 class MainViewController: UIViewController, NumberpadTouchDelegate {
-    var model : BalanceHistory?
+    var expenseCalendar : ExpenseCalendar
+    var coreDataManager : CoreDataManager
+    
+    init(dataManager : CoreDataManager, expenseCalendar : ExpenseCalendar) {
+        self.expenseCalendar = expenseCalendar
+        self.coreDataManager = dataManager
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("MainViewController has no NSCoding")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        model = BalanceHistory()
         view.addSubview(imageView)
         view.addSubview(dailyUsageLabel)
         view.addSubview(dailyUsageCount)
         view.addSubview(userInputLabel)
         view.addSubview(numberpad)
         view.setNeedsUpdateConstraints()
+        expenseCalendar.cdContext = coreDataManager.managedObjectContext
+        updateDailyAverage()
     }
     
     override func updateViewConstraints() {
@@ -31,20 +43,23 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
         super.updateViewConstraints()
     }
     
+    func updateDailyAverage() {
+        dailyUsageCount.text = "$" + String(format: "%.2f", expenseCalendar.getTodaysTotal())
+    }
+    
     // ~~~~ HANDLER METHODS ~~~~ //
     func handleTouch(tag : Int) {
         let chars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", ""]
         let newInputDisplay : String
-        print(tag)
         switch (tag) {
         case 9 :
-            newInputDisplay = model!.backspace()
+            newInputDisplay = expenseCalendar.backspace()
         case 11 :
-            newInputDisplay = model!.submitInput()
+            newInputDisplay = expenseCalendar.submitInput()
+            updateDailyAverage()
         default :
-            newInputDisplay = model!.processInput(char: chars[tag])
+            newInputDisplay = expenseCalendar.processInput(char: chars[tag])
         }
-        print(newInputDisplay)
         userInputLabel.setText(text: newInputDisplay)
     }
     
@@ -69,7 +84,7 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.boldSystemFont(ofSize: 24.0)
         view.textAlignment = .center
-        view.text = "$  .  "
+        view.text = ""
         return view
     }()
     
@@ -117,7 +132,7 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
             toItem: view,
             attribute: .top,
             multiplier: 1.0,
-            constant: 10.0)
+            constant: 0.0)
             .isActive = true
     }
     
@@ -139,7 +154,7 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
             toItem: imageView,
             attribute: .bottom,
             multiplier: 1.0,
-            constant: -25.0)
+            constant: -30.0)
             .isActive = true
         
         NSLayoutConstraint(
@@ -257,7 +272,7 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
             toItem: view,
             attribute: .width,
             multiplier: 1.0,
-            constant: -120.0)
+            constant: -80.0)
             .isActive = true
         
         NSLayoutConstraint(

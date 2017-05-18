@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "pizza-icon.png",
+      "filename" : "002-avatar-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "pizza-icon@2x.png",
+      "filename" : "002-avatar.png",
       "scale" : "2x"
     },
     {

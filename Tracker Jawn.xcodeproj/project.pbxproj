@@ -10,7 +10,12 @@
 		425C5FFE1ECA8A93009DE6DD /* InputLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C5FFD1ECA8A93009DE6DD /* InputLabelView.swift */; };
 		425C60021ECAC37E009DE6DD /* NumberpadTouchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60011ECAC37E009DE6DD /* NumberpadTouchDelegate.swift */; };
 		425C60051ECACF78009DE6DD /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60041ECACF78009DE6DD /* ImageKey.swift */; };
-		425C60071ECADA81009DE6DD /* BalanceHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60061ECADA81009DE6DD /* BalanceHistoryModel.swift */; };
+		425C60071ECADA81009DE6DD /* ExpenseCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60061ECADA81009DE6DD /* ExpenseCalendar.swift */; };
+		426C1BFA1ECBC1AF004BDC36 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1BF91ECBC1AF004BDC36 /* StatsViewController.swift */; };
+		426C1BFF1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 426C1BFD1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld */; };
+		426C1C411ECCD25F004BDC36 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C401ECCD25F004BDC36 /* CoreDataManager.swift */; };
+		426C1C441ECD2041004BDC36 /* TJDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C431ECD2041004BDC36 /* TJDate.swift */; };
+		426C1C481ECD2C77004BDC36 /* TJDateTest_Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C471ECD2C77004BDC36 /* TJDateTest_Initializer.swift */; };
 		428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021B71EC8D6FE003E8F96 /* AppDelegate.swift */; };
 		428021BF1EC8D6FE003E8F96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 428021BE1EC8D6FE003E8F96 /* Assets.xcassets */; };
 		428021C21EC8D6FE003E8F96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428021C01EC8D6FE003E8F96 /* LaunchScreen.storyboard */; };
@@ -45,7 +50,12 @@
 		425C5FFD1ECA8A93009DE6DD /* InputLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputLabelView.swift; path = ../InputLabelView.swift; sourceTree = "<group>"; };
 		425C60011ECAC37E009DE6DD /* NumberpadTouchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberpadTouchDelegate.swift; sourceTree = "<group>"; };
 		425C60041ECACF78009DE6DD /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
-		425C60061ECADA81009DE6DD /* BalanceHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceHistoryModel.swift; sourceTree = "<group>"; };
+		425C60061ECADA81009DE6DD /* ExpenseCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCalendar.swift; sourceTree = "<group>"; };
+		426C1BF91ECBC1AF004BDC36 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		426C1BFE1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrackerJawn.xcdatamodel; sourceTree = "<group>"; };
+		426C1C401ECCD25F004BDC36 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		426C1C431ECD2041004BDC36 /* TJDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJDate.swift; sourceTree = "<group>"; };
+		426C1C471ECD2C77004BDC36 /* TJDateTest_Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJDateTest_Initializer.swift; sourceTree = "<group>"; };
 		428021B41EC8D6FE003E8F96 /* Tracker Jawn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tracker Jawn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		428021B71EC8D6FE003E8F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		428021BE1EC8D6FE003E8F96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Tracker Jawn/Assets.xcassets"; sourceTree = "<group>"; };
@@ -101,12 +111,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		425C60001ECA8B48009DE6DD /* Misc */ = {
+		425C60001ECA8B48009DE6DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				426C1C451ECD2C3B004BDC36 /* Data Initializers */,
+				426C1C421ECCE851004BDC36 /* Extensions */,
 				428021FD1ECA4C50003E8F96 /* Literals.swift */,
 			);
-			name = Misc;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		425C60031ECAC388009DE6DD /* Interfaces */ = {
@@ -120,9 +132,45 @@
 		425C60081ECADA88009DE6DD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				425C60061ECADA81009DE6DD /* BalanceHistoryModel.swift */,
+				425C60061ECADA81009DE6DD /* ExpenseCalendar.swift */,
+				426C1BFD1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		426C1C3F1ECCD245004BDC36 /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				426C1C401ECCD25F004BDC36 /* CoreDataManager.swift */,
+			);
+			name = DataManagers;
+			sourceTree = "<group>";
+		};
+		426C1C421ECCE851004BDC36 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				426C1C431ECD2041004BDC36 /* TJDate.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		426C1C451ECD2C3B004BDC36 /* Data Initializers */ = {
+			isa = PBXGroup;
+			children = (
+				426C1C471ECD2C77004BDC36 /* TJDateTest_Initializer.swift */,
+			);
+			name = "Data Initializers";
+			sourceTree = "<group>";
+		};
+		426C1C491ECD2D9C004BDC36 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				428021E71EC93044003E8F96 /* MainTabBarController.swift */,
+				426C1BF91ECBC1AF004BDC36 /* StatsViewController.swift */,
+				428021F11EC938D8003E8F96 /* HistoryViewController.swift */,
+				428021E51EC8E452003E8F96 /* MainViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		428021AB1EC8D6FD003E8F96 = {
@@ -150,15 +198,14 @@
 			isa = PBXGroup;
 			children = (
 				428021B71EC8D6FE003E8F96 /* AppDelegate.swift */,
-				428021F11EC938D8003E8F96 /* HistoryViewController.swift */,
-				428021E51EC8E452003E8F96 /* MainViewController.swift */,
-				428021E71EC93044003E8F96 /* MainTabBarController.swift */,
 				428021C01EC8D6FE003E8F96 /* LaunchScreen.storyboard */,
 				428021C31EC8D6FE003E8F96 /* Info.plist */,
+				426C1C491ECD2D9C004BDC36 /* View Controllers */,
+				426C1C3F1ECCD245004BDC36 /* DataManagers */,
 				425C60081ECADA88009DE6DD /* Models */,
 				425C5FFF1ECA8B2B009DE6DD /* Views */,
 				425C60031ECAC388009DE6DD /* Interfaces */,
-				425C60001ECA8B48009DE6DD /* Misc */,
+				425C60001ECA8B48009DE6DD /* Resources */,
 			);
 			path = "Tracker Jawn";
 			sourceTree = "<group>";
@@ -319,14 +366,19 @@
 			files = (
 				428021FC1ECA3DFA003E8F96 /* NumberKey.swift in Sources */,
 				425C60051ECACF78009DE6DD /* ImageKey.swift in Sources */,
+				426C1C481ECD2C77004BDC36 /* TJDateTest_Initializer.swift in Sources */,
+				426C1C441ECD2041004BDC36 /* TJDate.swift in Sources */,
+				426C1C411ECCD25F004BDC36 /* CoreDataManager.swift in Sources */,
 				428022001ECA6445003E8F96 /* NumberPad.swift in Sources */,
 				428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */,
 				425C5FFE1ECA8A93009DE6DD /* InputLabelView.swift in Sources */,
 				428021E61EC8E452003E8F96 /* MainViewController.swift in Sources */,
-				425C60071ECADA81009DE6DD /* BalanceHistoryModel.swift in Sources */,
+				425C60071ECADA81009DE6DD /* ExpenseCalendar.swift in Sources */,
 				428021E81EC93044003E8F96 /* MainTabBarController.swift in Sources */,
 				428021F21EC938D8003E8F96 /* HistoryViewController.swift in Sources */,
+				426C1BFF1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld in Sources */,
 				425C60021ECAC37E009DE6DD /* NumberpadTouchDelegate.swift in Sources */,
+				426C1BFA1ECBC1AF004BDC36 /* StatsViewController.swift in Sources */,
 				428021FE1ECA4C50003E8F96 /* Literals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +523,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XYWGLFH42L;
 				INFOPLIST_FILE = "Tracker Jawn/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TorinDiSalvo.Tracker-Jawn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,6 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XYWGLFH42L;
 				INFOPLIST_FILE = "Tracker Jawn/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TorinDiSalvo.Tracker-Jawn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -589,6 +643,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		426C1BFD1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				426C1BFE1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodel */,
+			);
+			currentVersion = 426C1BFE1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodel */;
+			path = TrackerJawn.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 428021AC1EC8D6FD003E8F96 /* Project object */;
 }
