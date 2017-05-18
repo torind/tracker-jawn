@@ -9,11 +9,21 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-    private let coreDataManager = CoreDataManager(modelName: "TrackerJawn")
+    private let coreDataManager : CoreDataManager
     private var mainViewController : MainViewController?
     private var historyViewController : HistoryViewController?
     private var statsViewController : StatsViewController?
-    private var expenseCalendar = ExpenseCalendar()
+    private var expenseCalendar : ExpenseCalendar
+    
+    init() {
+        coreDataManager = CoreDataManager(modelName: "TrackerJawn")
+        expenseCalendar = ExpenseCalendar(context: coreDataManager.managedObjectContext)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("MainTabBarController has no NSCoding")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +33,8 @@ class MainTabBarController: UITabBarController {
         expenseCalendar.fetchDailyExpenses()
         
         //Initalize View Controllers
-        mainViewController = MainViewController(dataManager: coreDataManager,
-                                                expenseCalendar : expenseCalendar)
-        historyViewController = HistoryViewController()
+        mainViewController = MainViewController(expenseCalendar : expenseCalendar)
+        historyViewController = HistoryViewController(expenseCalendar : expenseCalendar)
         statsViewController = StatsViewController()
         
         

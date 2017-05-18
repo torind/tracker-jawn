@@ -13,16 +13,17 @@ import CoreData
 class ExpenseCalendar {
     var inputChars = ""
     var ledger : [NSDate: TJDate]
-    var cdContext : NSManagedObjectContext?
+    var cdContext : NSManagedObjectContext
     
-    init() {
+    init(context : NSManagedObjectContext) {
+        cdContext = context
         ledger = [NSDate: TJDate]()
     }
     
     func fetchDailyExpenses() {
         print("Fetching from persistent store")
         let fetchRequest : NSFetchRequest<TJDate> = TJDate.fetchRequest()
-        cdContext?.performAndWait {
+        cdContext.performAndWait {
             do {
                 let dates = try fetchRequest.execute()
                 print ("Dates fetched: \(dates.count)")
@@ -35,7 +36,7 @@ class ExpenseCalendar {
                 print("Error recovering TJDates from persistent store")
                 print("\(error): \(error.localizedDescription)")
             }
-        } ?? print("Could not fetch TJDates because context was not initialized")
+        }
     }
     
     func getDisplayAmount() -> String {
@@ -112,7 +113,7 @@ class ExpenseCalendar {
     }
     
     func todaysTJDate() -> TJDate {
-        let tjDate = TJDate(context: cdContext!)
+        let tjDate = TJDate(context: cdContext)
         tjDate.date = todaysDate()
         return tjDate
     }

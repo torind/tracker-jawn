@@ -13,6 +13,16 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     private var myTableView: UITableView!
     private var options: [[String]] = [["$10.50","2.74"],["$100.25","$10.12", "$1.90", "$21.50"],["$2.00","$7.60", "$5.50"]]
     private var sections: NSArray = ["This Week","Last Week","Two Weeks Ago"]
+    private var expenseCalendar : ExpenseCalendar
+    
+    init(expenseCalendar : ExpenseCalendar) {
+        self.expenseCalendar = expenseCalendar
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("MainViewController has no NSCoding")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

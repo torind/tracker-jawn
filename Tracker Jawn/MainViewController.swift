@@ -10,11 +10,9 @@ import UIKit
 
 class MainViewController: UIViewController, NumberpadTouchDelegate {
     var expenseCalendar : ExpenseCalendar
-    var coreDataManager : CoreDataManager
     
-    init(dataManager : CoreDataManager, expenseCalendar : ExpenseCalendar) {
+    init(expenseCalendar : ExpenseCalendar) {
         self.expenseCalendar = expenseCalendar
-        self.coreDataManager = dataManager
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,7 +28,6 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
         view.addSubview(userInputLabel)
         view.addSubview(numberpad)
         view.setNeedsUpdateConstraints()
-        expenseCalendar.cdContext = coreDataManager.managedObjectContext
         updateDailyAverage()
     }
     
