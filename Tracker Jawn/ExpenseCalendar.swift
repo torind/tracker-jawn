@@ -12,17 +12,24 @@ import CoreData
 
 class ExpenseCalendar {
     var inputChars = ""
-    var ledger : [NSDate: TJDate]
+    var ledger : [NSDate : TJDate]
     var cdContext : NSManagedObjectContext
     
     init(context : NSManagedObjectContext) {
         cdContext = context
-        ledger = [NSDate: TJDate]()
+        ledger = [NSDate : TJDate]()
+        fetchDailyExpenses()
     }
     
+    /**
+     Loads all dates and expenses from the CoreDataManager and adds them to this instance
+     of the ExpenseCalendar
+     */
     func fetchDailyExpenses() {
         print("Fetching from persistent store")
         let fetchRequest : NSFetchRequest<TJDate> = TJDate.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(TJDate.date),
+                                                            ascending: false)]
         cdContext.performAndWait {
             do {
                 let dates = try fetchRequest.execute()
@@ -30,7 +37,7 @@ class ExpenseCalendar {
                 for d in dates {
                     let nsDate = d.date
                     guard (nsDate != nil) else { continue }
-                    self.ledger[nsDate!] = d
+                    //self.ledger[nsDate!] = d
                 }
             } catch {
                 print("Error recovering TJDates from persistent store")
@@ -39,10 +46,19 @@ class ExpenseCalendar {
         }
     }
     
+    
+    /**
+     Gets the display amount
+     - returns: the display amount
+     */
     func getDisplayAmount() -> String {
         return parseInputChars()
     }
     
+    /**
+     Deletes the last inputed characters
+     - returns: the new display amount
+     */
     func backspace() -> String {
         if (inputChars.characters.count > 0) {
             let index = inputChars.index(inputChars.endIndex, offsetBy: -1)
@@ -51,8 +67,12 @@ class ExpenseCalendar {
         return parseInputChars()
     }
     
+    /**
+     Adds expense to todays date and resets input
+     - returns: the new display amount equal to an empty string
+     */
     func submitInput() -> String {
-        var todayTJDate = ledger[todaysDate()]
+        var todayTJDate = ledger[ExpenseCalendar.todaysDate()]
         if (todayTJDate == nil) {
             todayTJDate = createTJDateForToday()
         }
@@ -62,19 +82,32 @@ class ExpenseCalendar {
         return parseInputChars()
     }
     
+    /**
+     Adds input to the input characters and returns the display amount
+     - parameter char: the character that was input
+     - returns: the corresponfing delay amount
+     */
     func processInput(char : String) -> String {
         inputChars = inputChars + char
         return parseInputChars()
     }
     
+    /**
+     Sums the expenses for today
+     - returns: the total amount spent today
+     */
     func getTodaysTotal() -> Double {
-        var todayTJDate = ledger[todaysDate()]
+        var todayTJDate = ledger[ExpenseCalendar.todaysDate()]
         if (todayTJDate == nil) {
             todayTJDate = createTJDateForToday()
         }
         return todayTJDate!.sumExpenses()
     }
     
+    /**
+     Parses the input characters as a dollar amount a.k.a. a double with two decimals
+     - returns: the string to be displayed for the given input
+     */
     func parseInputChars() -> String {
         let displayAmount : String
         let inputLength = inputChars.characters.count
@@ -94,28 +127,24 @@ class ExpenseCalendar {
         return displayAmount
     }
     
+    /**
+     Adds a new TJDate object to the legder collection in this instance of expenseCalendar
+     - returns: the TJDate object added to the ledger
+     */
     func createTJDateForToday() -> TJDate {
         print("Creating a new date for today")
-        let date = todaysTJDate()
-        ledger[todaysDate()] = date
+        let date = TJDate(context: cdContext)
+        date.date = NSDate().noonNormalized()
+        ledger[ExpenseCalendar.todaysDate()] = date
         return date
     }
     
-    func todaysDate() -> NSDate {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let dateString = dateFormatter.string(from: Date())
-        let dateComps = dateString.components(separatedBy: " ")
-        let zeroedDateString = dateComps[0] + " 00:00:00"
-        let zeroedDate = dateFormatter.date(from: zeroedDateString)!
-        let zeroedNSDate = NSDate(timeIntervalSince1970: zeroedDate.timeIntervalSince1970)
-        return zeroedNSDate
-    }
-    
-    func todaysTJDate() -> TJDate {
-        let tjDate = TJDate(context: cdContext)
-        tjDate.date = todaysDate()
-        return tjDate
+    /**
+     Creates a NSDate object containing today's date with time set to 00:00:00
+     - returns: the NSDate object
+     */
+    static func todaysDate() -> NSDate {
+        return NSDate().noonNormalized()
     }
 
 }

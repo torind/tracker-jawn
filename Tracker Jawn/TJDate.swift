@@ -25,4 +25,16 @@ extension TJDate {
         expense.amount = amount
         self.addToExpenses(expense)
     }
+    
+    func daysSinceToday() -> Int {
+        let calendar = NSCalendar.current
+        let today = NSDate().noonNormalized()
+        let components = calendar.dateComponents([Calendar.Component.day],
+                                                 from: self.date!.toDate(),
+                                                 to: today.toDate())
+        if (components.date == nil) {
+            fatalError("Failed to get number of days since today for date \(self.date)")
+        }
+        return components.day!
+    }
 }

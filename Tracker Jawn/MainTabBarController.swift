@@ -28,10 +28,6 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        expenseCalendar.cdContext = coreDataManager.managedObjectContext
-        print("Bouta fetch daily expenses")
-        expenseCalendar.fetchDailyExpenses()
-        
         //Initalize View Controllers
         mainViewController = MainViewController(expenseCalendar : expenseCalendar)
         historyViewController = HistoryViewController(expenseCalendar : expenseCalendar)

@@ -16,6 +16,9 @@
 		426C1C411ECCD25F004BDC36 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C401ECCD25F004BDC36 /* CoreDataManager.swift */; };
 		426C1C441ECD2041004BDC36 /* TJDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C431ECD2041004BDC36 /* TJDate.swift */; };
 		426C1C481ECD2C77004BDC36 /* TJDateTest_Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C471ECD2C77004BDC36 /* TJDateTest_Initializer.swift */; };
+		42779DA31ECE602D00F8628E /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DA21ECE602D00F8628E /* DateManager.swift */; };
+		42779DA71ECE7EC400F8628E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DA61ECE7EC400F8628E /* Date.swift */; };
+		42779DAA1ECE7ED000F8628E /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DA91ECE7ED000F8628E /* NSDate.swift */; };
 		428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021B71EC8D6FE003E8F96 /* AppDelegate.swift */; };
 		428021BF1EC8D6FE003E8F96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 428021BE1EC8D6FE003E8F96 /* Assets.xcassets */; };
 		428021C21EC8D6FE003E8F96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428021C01EC8D6FE003E8F96 /* LaunchScreen.storyboard */; };
@@ -56,6 +59,9 @@
 		426C1C401ECCD25F004BDC36 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		426C1C431ECD2041004BDC36 /* TJDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJDate.swift; sourceTree = "<group>"; };
 		426C1C471ECD2C77004BDC36 /* TJDateTest_Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJDateTest_Initializer.swift; sourceTree = "<group>"; };
+		42779DA21ECE602D00F8628E /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateManager.swift; path = ../DateManager.swift; sourceTree = "<group>"; };
+		42779DA61ECE7EC400F8628E /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		42779DA91ECE7ED000F8628E /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDate.swift; path = ../NSDate.swift; sourceTree = "<group>"; };
 		428021B41EC8D6FE003E8F96 /* Tracker Jawn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tracker Jawn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		428021B71EC8D6FE003E8F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		428021BE1EC8D6FE003E8F96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Tracker Jawn/Assets.xcassets"; sourceTree = "<group>"; };
@@ -150,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				426C1C431ECD2041004BDC36 /* TJDate.swift */,
+				42779DA91ECE7ED000F8628E /* NSDate.swift */,
+				42779DA61ECE7EC400F8628E /* Date.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -197,6 +205,7 @@
 		428021B61EC8D6FE003E8F96 /* Tracker Jawn */ = {
 			isa = PBXGroup;
 			children = (
+				42779DA21ECE602D00F8628E /* DateManager.swift */,
 				428021B71EC8D6FE003E8F96 /* AppDelegate.swift */,
 				428021C01EC8D6FE003E8F96 /* LaunchScreen.storyboard */,
 				428021C31EC8D6FE003E8F96 /* Info.plist */,
@@ -372,12 +381,15 @@
 				428022001ECA6445003E8F96 /* NumberPad.swift in Sources */,
 				428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */,
 				425C5FFE1ECA8A93009DE6DD /* InputLabelView.swift in Sources */,
+				42779DA31ECE602D00F8628E /* DateManager.swift in Sources */,
 				428021E61EC8E452003E8F96 /* MainViewController.swift in Sources */,
 				425C60071ECADA81009DE6DD /* ExpenseCalendar.swift in Sources */,
 				428021E81EC93044003E8F96 /* MainTabBarController.swift in Sources */,
 				428021F21EC938D8003E8F96 /* HistoryViewController.swift in Sources */,
+				42779DAA1ECE7ED000F8628E /* NSDate.swift in Sources */,
 				426C1BFF1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld in Sources */,
 				425C60021ECAC37E009DE6DD /* NumberpadTouchDelegate.swift in Sources */,
+				42779DA71ECE7EC400F8628E /* Date.swift in Sources */,
 				426C1BFA1ECBC1AF004BDC36 /* StatsViewController.swift in Sources */,
 				428021FE1ECA4C50003E8F96 /* Literals.swift in Sources */,
 			);
