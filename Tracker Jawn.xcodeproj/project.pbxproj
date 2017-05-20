@@ -11,6 +11,7 @@
 		425C60021ECAC37E009DE6DD /* NumberpadTouchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60011ECAC37E009DE6DD /* NumberpadTouchDelegate.swift */; };
 		425C60051ECACF78009DE6DD /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60041ECACF78009DE6DD /* ImageKey.swift */; };
 		425C60071ECADA81009DE6DD /* ExpenseCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60061ECADA81009DE6DD /* ExpenseCalendar.swift */; };
+		42617CC61ED0EF73000F3DAD /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42617CC51ED0EF73000F3DAD /* HistoryTableViewCell.swift */; };
 		426C1BFA1ECBC1AF004BDC36 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1BF91ECBC1AF004BDC36 /* StatsViewController.swift */; };
 		426C1BFF1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 426C1BFD1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld */; };
 		426C1C411ECCD25F004BDC36 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C401ECCD25F004BDC36 /* CoreDataManager.swift */; };
@@ -19,6 +20,7 @@
 		42779DA31ECE602D00F8628E /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DA21ECE602D00F8628E /* DateManager.swift */; };
 		42779DA71ECE7EC400F8628E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DA61ECE7EC400F8628E /* Date.swift */; };
 		42779DAA1ECE7ED000F8628E /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DA91ECE7ED000F8628E /* NSDate.swift */; };
+		42779DAD1ED0E5B400F8628E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DAC1ED0E5B400F8628E /* Util.swift */; };
 		428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021B71EC8D6FE003E8F96 /* AppDelegate.swift */; };
 		428021BF1EC8D6FE003E8F96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 428021BE1EC8D6FE003E8F96 /* Assets.xcassets */; };
 		428021C21EC8D6FE003E8F96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428021C01EC8D6FE003E8F96 /* LaunchScreen.storyboard */; };
@@ -54,6 +56,7 @@
 		425C60011ECAC37E009DE6DD /* NumberpadTouchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberpadTouchDelegate.swift; sourceTree = "<group>"; };
 		425C60041ECACF78009DE6DD /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
 		425C60061ECADA81009DE6DD /* ExpenseCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCalendar.swift; sourceTree = "<group>"; };
+		42617CC51ED0EF73000F3DAD /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		426C1BF91ECBC1AF004BDC36 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		426C1BFE1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrackerJawn.xcdatamodel; sourceTree = "<group>"; };
 		426C1C401ECCD25F004BDC36 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		42779DA21ECE602D00F8628E /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateManager.swift; path = ../DateManager.swift; sourceTree = "<group>"; };
 		42779DA61ECE7EC400F8628E /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		42779DA91ECE7ED000F8628E /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDate.swift; path = ../NSDate.swift; sourceTree = "<group>"; };
+		42779DAC1ED0E5B400F8628E /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		428021B41EC8D6FE003E8F96 /* Tracker Jawn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tracker Jawn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		428021B71EC8D6FE003E8F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		428021BE1EC8D6FE003E8F96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Tracker Jawn/Assets.xcassets"; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				428021FB1ECA3DFA003E8F96 /* NumberKey.swift */,
 				425C60041ECACF78009DE6DD /* ImageKey.swift */,
 				428021FF1ECA6445003E8F96 /* NumberPad.swift */,
+				42617CC51ED0EF73000F3DAD /* HistoryTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				425C60061ECADA81009DE6DD /* ExpenseCalendar.swift */,
+				42779DAC1ED0E5B400F8628E /* Util.swift */,
 				426C1BFD1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld */,
 			);
 			name = Models;
@@ -380,7 +386,9 @@
 				426C1C411ECCD25F004BDC36 /* CoreDataManager.swift in Sources */,
 				428022001ECA6445003E8F96 /* NumberPad.swift in Sources */,
 				428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */,
+				42779DAD1ED0E5B400F8628E /* Util.swift in Sources */,
 				425C5FFE1ECA8A93009DE6DD /* InputLabelView.swift in Sources */,
+				42617CC61ED0EF73000F3DAD /* HistoryTableViewCell.swift in Sources */,
 				42779DA31ECE602D00F8628E /* DateManager.swift in Sources */,
 				428021E61EC8E452003E8F96 /* MainViewController.swift in Sources */,
 				425C60071ECADA81009DE6DD /* ExpenseCalendar.swift in Sources */,

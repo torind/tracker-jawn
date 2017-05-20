@@ -11,9 +11,9 @@ import UIKit
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private var myTableView: UITableView!
-    private var options: [[String]] = [["$10.50","2.74"],["$100.25","$10.12", "$1.90", "$21.50"],["$2.00","$7.60", "$5.50"]]
     private var sections: NSArray = ["This Week","Last Week","Two Weeks Ago"]
     private var expenseCalendar : ExpenseCalendar
+    private var tableView : UITableView?
     
     init(expenseCalendar : ExpenseCalendar) {
         self.expenseCalendar = expenseCalendar
@@ -26,30 +26,34 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
         let displayWidth: CGFloat = self.view.frame.width
         let displayHeight: CGFloat = self.view.frame.height
         
-        myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
-        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "SpendingHistoryCell")
-        myTableView.dataSource = self
-        myTableView.delegate = self
-        self.view.addSubview(myTableView)
+        tableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
+        tableView!.register(HistoryTableViewCell.self, forCellReuseIdentifier: "SpendingHistoryCell")
+        tableView!.dataSource = self
+        tableView!.delegate = self
+        self.view.addSubview(tableView!)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView!.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return options.count
+        return expenseCalendar.numWeeks()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return options[section].count
+        return expenseCalendar.weekOf(offset: section).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SpendingHistoryCell", for: indexPath as IndexPath)
-        
-        cell.textLabel!.text = "\((options[indexPath.section])[indexPath.row])"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SpendingHistoryCell", for: indexPath as IndexPath) as! HistoryTableViewCell
+        let tjDate = expenseCalendar.weekOf(offset: indexPath.section)[indexPath.row]
+        cell.setDate(date: tjDate.date!)
+        cell.setAmount(amount : tjDate.sumExpenses())
         return cell
     }
     

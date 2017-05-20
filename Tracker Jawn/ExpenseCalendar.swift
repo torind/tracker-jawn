@@ -12,12 +12,12 @@ import CoreData
 
 class ExpenseCalendar {
     var inputChars = ""
-    var ledger : [NSDate : TJDate]
+    var ledger : [[TJDate]]
     var cdContext : NSManagedObjectContext
     
     init(context : NSManagedObjectContext) {
         cdContext = context
-        ledger = [NSDate : TJDate]()
+        ledger = [[TJDate]]()
         fetchDailyExpenses()
     }
     
@@ -26,7 +26,8 @@ class ExpenseCalendar {
      of the ExpenseCalendar
      */
     func fetchDailyExpenses() {
-        print("Fetching from persistent store")
+        var daysThisWeek = Util.currentDayOfWeek()
+        
         let fetchRequest : NSFetchRequest<TJDate> = TJDate.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(TJDate.date),
                                                             ascending: false)]
@@ -34,10 +35,21 @@ class ExpenseCalendar {
             do {
                 let dates = try fetchRequest.execute()
                 print ("Dates fetched: \(dates.count)")
+                if (dates.count == 0) { return } 
+                var week = [TJDate]()
                 for d in dates {
-                    let nsDate = d.date
-                    guard (nsDate != nil) else { continue }
-                    //self.ledger[nsDate!] = d
+                    week.append(d)
+                    daysThisWeek -= 1
+                    if (daysThisWeek == 0) {
+                        print("Appending week \(self.ledger.count + 1)")
+                        self.ledger.append(week)
+                        week = [TJDate]()
+                        daysThisWeek = 7
+                    }
+                }
+                if (daysThisWeek != 0) {
+                    print("Appending week \(self.ledger.count + 1)")
+                    self.ledger.append(week)
                 }
             } catch {
                 print("Error recovering TJDates from persistent store")
@@ -72,14 +84,29 @@ class ExpenseCalendar {
      - returns: the new display amount equal to an empty string
      */
     func submitInput() -> String {
-        var todayTJDate = ledger[ExpenseCalendar.todaysDate()]
-        if (todayTJDate == nil) {
-            todayTJDate = createTJDateForToday()
-        }
+        ledgerHasTodayCheck()
+        let todayTJDate = ledger[0][0]
         let expenseDouble = Double(inputChars)! / 100
-        todayTJDate!.createAndAddExpense(amount: expenseDouble)
+        todayTJDate.createAndAddExpense(amount: expenseDouble)
         inputChars = ""
         return parseInputChars()
+    }
+    
+    /**
+     Ensures that the ledger contains an entry for today's date, otherwise it creates one
+     */
+    func ledgerHasTodayCheck() {
+        if (ledger.count == 0) {
+            print("No existing data entries")
+            createTJDateForToday()
+            return
+        }
+        let recentTJDate = ledger[0][0]
+        let today = NSDate().noonNormalized()
+        let isEqual = recentTJDate.date!.isEqual(today.toDate())
+        if (!isEqual) {
+            createTJDateForToday()
+        }
     }
     
     /**
@@ -97,11 +124,9 @@ class ExpenseCalendar {
      - returns: the total amount spent today
      */
     func getTodaysTotal() -> Double {
-        var todayTJDate = ledger[ExpenseCalendar.todaysDate()]
-        if (todayTJDate == nil) {
-            todayTJDate = createTJDateForToday()
-        }
-        return todayTJDate!.sumExpenses()
+        ledgerHasTodayCheck()
+        let todayTJDate = ledger[0][0]
+        return todayTJDate.sumExpenses()
     }
     
     /**
@@ -131,12 +156,23 @@ class ExpenseCalendar {
      Adds a new TJDate object to the legder collection in this instance of expenseCalendar
      - returns: the TJDate object added to the ledger
      */
-    func createTJDateForToday() -> TJDate {
+    func createTJDateForToday() {
         print("Creating a new date for today")
         let date = TJDate(context: cdContext)
-        date.date = NSDate().noonNormalized()
-        ledger[ExpenseCalendar.todaysDate()] = date
-        return date
+        date.date = ExpenseCalendar.todaysDate()
+        if (ledger.count == 0) {
+            let week = [date]
+            ledger.append(week)
+            return
+        }
+        if (Util.currentDayOfWeek() == 0) {
+            let week = [date]
+            ledger.insert(week, at: 0)
+        }
+        else {
+            let week = ledger[0]
+            ledger.insert(week, at: 0)
+        }
     }
     
     /**
@@ -145,6 +181,14 @@ class ExpenseCalendar {
      */
     static func todaysDate() -> NSDate {
         return NSDate().noonNormalized()
+    }
+    
+    func numWeeks() -> Int {
+        return ledger.count
+    }
+    
+    func weekOf(offset: Int) -> [TJDate] {
+        return ledger[offset]
     }
 
 }

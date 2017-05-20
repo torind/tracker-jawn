@@ -32,7 +32,7 @@ extension TJDate {
         let components = calendar.dateComponents([Calendar.Component.day],
                                                  from: self.date!.toDate(),
                                                  to: today.toDate())
-        if (components.date == nil) {
+        if (components.day == nil) {
             fatalError("Failed to get number of days since today for date \(self.date)")
         }
         return components.day!

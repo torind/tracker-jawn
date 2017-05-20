@@ -25,18 +25,18 @@ class Tracker_JawnTests: XCTestCase {
     
     func zeroDaysSinceTodayTest() {
         let today = TJDate()
-        today.setDate(nsDate: NSDate(), normalize: true)
+        //today.setDate(nsDate: NSDate(), normalize: true)
         let numDays = today.daysSinceToday()
         XCTAssert(numDays == 0)
     }
     
     func oneDaysSinceYesterdayTest() {
-        let calendar = NSCalendar.current
-        var oneDay = DateComponents()
-        oneDay.day = 1
-        let tomorrow = calendar.date(byAdding: oneDay, to: NSDate().toDate())!.toNSDate()
-        let today = TJDate()
-        today.setDate(nsDate: tomorrow, normalize: true)
+        //let calendar = NSCalendar.current
+        //var oneDay = DateComponents()
+        //oneDay.day = 1
+        //let tomorrow = calendar.date(byAdding: oneDay, to: NSDate().toDate())!.toNSDate()
+        //let today = TJDate()
+        //today.setDate(nsDate: tomorrow, normalize: true)
         
     }
     
