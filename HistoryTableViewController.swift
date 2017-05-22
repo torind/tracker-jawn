@@ -16,6 +16,7 @@ class HistoryTableViewController: UITableViewController, UINavigationControllerD
     init(expenseCalendar : ExpenseCalendar) {
         self.expenseCalendar = expenseCalendar
         super.init(nibName: nil, bundle: nil)
+        self.tableView.allowsMultipleSelectionDuringEditing = false;
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,12 +43,12 @@ class HistoryTableViewController: UITableViewController, UINavigationControllerD
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return expenseCalendar.weekOf(offset: section).count
+        return expenseCalendar.weekOf(offset: section)!.dates!.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpendingHistoryCell", for: indexPath as IndexPath) as! HistoryTableViewCell
-        let tjDate = expenseCalendar.weekOf(offset: indexPath.section)[indexPath.row]
+        let tjDate = expenseCalendar.dateFor(week: indexPath.section, day: indexPath.row)!
         cell.setDate(date: tjDate.date!)
         cell.setAmount(amount : tjDate.sumExpenses())
         return cell
@@ -58,8 +59,33 @@ class HistoryTableViewController: UITableViewController, UINavigationControllerD
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedDate = expenseCalendar.weekOf(offset: indexPath.section)[indexPath.row]
+        let selectedDate = expenseCalendar.dateFor(week: indexPath.section, day: indexPath.row)!
         let singleDayController = SingleDayTableViewController(date: selectedDate)
         self.navigationController!.pushViewController(singleDayController, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let date = expenseCalendar.dateFor(week: indexPath.section, day: indexPath.row)!
+            let success = expenseCalendar.deleteDate(week: indexPath.section, day: indexPath.row)
+            if (success) {
+                CoreDataManager.getInstance().managedObjectContext.delete(date)
+                let weekOf = expenseCalendar.weekOf(offset: indexPath.section)
+                if (weekOf == nil) {
+                    tableView.reloadData()
+                } else {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }
+            else {
+                let ac = UIAlertController(title: "Error",
+                                  message: "Failed to delete selected date",
+                                  preferredStyle: UIAlertControllerStyle.alert)
+                self.present(ac, animated: true, completion: nil)
+            }
+            
+        } else if editingStyle == .insert {
+            
+        }
     }
 }

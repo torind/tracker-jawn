@@ -3,14 +3,19 @@
     <entity name="TJDate" representedClassName="TJDate" syncable="YES" codeGenerationType="class">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TJExpense" inverseName="date" inverseEntity="TJExpense" syncable="YES"/>
+        <relationship name="week" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="TJWeek" inverseName="dates" inverseEntity="TJWeek" syncable="YES"/>
     </entity>
     <entity name="TJExpense" representedClassName="TJExpense" syncable="YES" codeGenerationType="class">
         <attribute name="amount" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="date" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="TJDate" inverseName="expenses" inverseEntity="TJDate" syncable="YES"/>
     </entity>
+    <entity name="TJWeek" representedClassName="TJWeek" syncable="YES" codeGenerationType="class">
+        <relationship name="dates" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="TJDate" inverseName="week" inverseEntity="TJDate" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="TJDate" positionX="-299" positionY="-75" width="128" height="73"/>
+        <element name="TJDate" positionX="-299" positionY="-75" width="128" height="90"/>
         <element name="TJExpense" positionX="-54" positionY="0" width="128" height="90"/>
+        <element name="TJWeek" positionX="-180" positionY="-9" width="128" height="60"/>
     </elements>
 </model>

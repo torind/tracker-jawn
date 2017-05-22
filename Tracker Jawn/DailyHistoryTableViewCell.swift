@@ -13,7 +13,7 @@ class DailyHistoryTableViewCell: UITableViewCell {
     let descLabel = UILabel()
     let amountLabel = UILabel()
     final let TIME_PROPORTION = CGFloat(0.35)
-    final let DESC_PROPORTION = CGFloat(0.45)
+    final let DESC_PROPORTION = CGFloat(0.40)
     final let TIME_PADDING = CGFloat(25.0)
     final let AMOUNT_PADDING = CGFloat(25.0)
     

@@ -20,6 +20,7 @@
 		426C6D0F1ED22511001419B3 /* HistoryNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C6D0E1ED22511001419B3 /* HistoryNavViewController.swift */; };
 		426C6D141ED22B50001419B3 /* SingleDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C6D131ED22B50001419B3 /* SingleDayTableViewController.swift */; };
 		426C6D161ED24DF1001419B3 /* DailyHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C6D151ED24DF1001419B3 /* DailyHistoryTableViewCell.swift */; };
+		42726D961ED35400006D821B /* TJWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42726D951ED35400006D821B /* TJWeek.swift */; };
 		42779DA71ECE7EC400F8628E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DA61ECE7EC400F8628E /* Date.swift */; };
 		42779DAA1ECE7ED000F8628E /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DA91ECE7ED000F8628E /* NSDate.swift */; };
 		42779DAD1ED0E5B400F8628E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DAC1ED0E5B400F8628E /* Util.swift */; };
@@ -67,6 +68,7 @@
 		426C6D0E1ED22511001419B3 /* HistoryNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNavViewController.swift; sourceTree = "<group>"; };
 		426C6D131ED22B50001419B3 /* SingleDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDayTableViewController.swift; sourceTree = "<group>"; };
 		426C6D151ED24DF1001419B3 /* DailyHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		42726D951ED35400006D821B /* TJWeek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJWeek.swift; sourceTree = "<group>"; };
 		42779DA61ECE7EC400F8628E /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		42779DA91ECE7ED000F8628E /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDate.swift; path = ../NSDate.swift; sourceTree = "<group>"; };
 		42779DAC1ED0E5B400F8628E /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				426C1C431ECD2041004BDC36 /* TJDate.swift */,
+				42726D951ED35400006D821B /* TJWeek.swift */,
 				42779DA91ECE7ED000F8628E /* NSDate.swift */,
 				42779DA61ECE7EC400F8628E /* Date.swift */,
 			);
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				428021FC1ECA3DFA003E8F96 /* NumberKey.swift in Sources */,
+				42726D961ED35400006D821B /* TJWeek.swift in Sources */,
 				425C60051ECACF78009DE6DD /* ImageKey.swift in Sources */,
 				426C1C481ECD2C77004BDC36 /* TJDateTest_Initializer.swift in Sources */,
 				426C1C441ECD2041004BDC36 /* TJDate.swift in Sources */,

@@ -28,7 +28,11 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
         view.addSubview(userInputLabel)
         view.addSubview(numberpad)
         view.setNeedsUpdateConstraints()
-        updateDailyAverage()
+        updateDailyTotal()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateDailyTotal()
     }
     
     override func updateViewConstraints() {
@@ -40,24 +44,23 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
         super.updateViewConstraints()
     }
     
-    func updateDailyAverage() {
+    func updateDailyTotal() {
         dailyUsageCount.text = "$" + String(format: "%.2f", expenseCalendar.getTodaysTotal())
     }
     
     // ~~~~ HANDLER METHODS ~~~~ //
     func handleTouch(tag : Int) {
         let chars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", ""]
-        let newInputDisplay : String
         switch (tag) {
         case 9 :
-            newInputDisplay = expenseCalendar.backspace()
+            userInputLabel.backspace()
         case 11 :
-            newInputDisplay = expenseCalendar.submitInput()
-            updateDailyAverage()
+            expenseCalendar.submitInput(amount: userInputLabel.getDoubleForInput())
+            userInputLabel.resetInput()
+            updateDailyTotal()
         default :
-            newInputDisplay = expenseCalendar.processInput(char: chars[tag])
+            userInputLabel.processInput(char: chars[tag])
         }
-        userInputLabel.setText(text: newInputDisplay)
     }
     
     // ~~~~ SUBVIEWS ~~~~ //
