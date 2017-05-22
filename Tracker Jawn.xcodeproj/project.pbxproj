@@ -17,7 +17,9 @@
 		426C1C411ECCD25F004BDC36 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C401ECCD25F004BDC36 /* CoreDataManager.swift */; };
 		426C1C441ECD2041004BDC36 /* TJDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C431ECD2041004BDC36 /* TJDate.swift */; };
 		426C1C481ECD2C77004BDC36 /* TJDateTest_Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C471ECD2C77004BDC36 /* TJDateTest_Initializer.swift */; };
-		42779DA31ECE602D00F8628E /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DA21ECE602D00F8628E /* DateManager.swift */; };
+		426C6D0F1ED22511001419B3 /* HistoryNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C6D0E1ED22511001419B3 /* HistoryNavViewController.swift */; };
+		426C6D141ED22B50001419B3 /* SingleDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C6D131ED22B50001419B3 /* SingleDayTableViewController.swift */; };
+		426C6D161ED24DF1001419B3 /* DailyHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C6D151ED24DF1001419B3 /* DailyHistoryTableViewCell.swift */; };
 		42779DA71ECE7EC400F8628E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DA61ECE7EC400F8628E /* Date.swift */; };
 		42779DAA1ECE7ED000F8628E /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DA91ECE7ED000F8628E /* NSDate.swift */; };
 		42779DAD1ED0E5B400F8628E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42779DAC1ED0E5B400F8628E /* Util.swift */; };
@@ -28,7 +30,7 @@
 		428021D81EC8D6FE003E8F96 /* Tracker_JawnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021D71EC8D6FE003E8F96 /* Tracker_JawnUITests.swift */; };
 		428021E61EC8E452003E8F96 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021E51EC8E452003E8F96 /* MainViewController.swift */; };
 		428021E81EC93044003E8F96 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021E71EC93044003E8F96 /* MainTabBarController.swift */; };
-		428021F21EC938D8003E8F96 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021F11EC938D8003E8F96 /* HistoryViewController.swift */; };
+		428021F21EC938D8003E8F96 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021F11EC938D8003E8F96 /* HistoryTableViewController.swift */; };
 		428021FC1ECA3DFA003E8F96 /* NumberKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021FB1ECA3DFA003E8F96 /* NumberKey.swift */; };
 		428021FE1ECA4C50003E8F96 /* Literals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021FD1ECA4C50003E8F96 /* Literals.swift */; };
 		428022001ECA6445003E8F96 /* NumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021FF1ECA6445003E8F96 /* NumberPad.swift */; };
@@ -62,7 +64,9 @@
 		426C1C401ECCD25F004BDC36 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		426C1C431ECD2041004BDC36 /* TJDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJDate.swift; sourceTree = "<group>"; };
 		426C1C471ECD2C77004BDC36 /* TJDateTest_Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJDateTest_Initializer.swift; sourceTree = "<group>"; };
-		42779DA21ECE602D00F8628E /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateManager.swift; path = ../DateManager.swift; sourceTree = "<group>"; };
+		426C6D0E1ED22511001419B3 /* HistoryNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNavViewController.swift; sourceTree = "<group>"; };
+		426C6D131ED22B50001419B3 /* SingleDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDayTableViewController.swift; sourceTree = "<group>"; };
+		426C6D151ED24DF1001419B3 /* DailyHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		42779DA61ECE7EC400F8628E /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		42779DA91ECE7ED000F8628E /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDate.swift; path = ../NSDate.swift; sourceTree = "<group>"; };
 		42779DAC1ED0E5B400F8628E /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
@@ -79,7 +83,7 @@
 		428021D91EC8D6FE003E8F96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		428021E51EC8E452003E8F96 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		428021E71EC93044003E8F96 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		428021F11EC938D8003E8F96 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = ../HistoryViewController.swift; sourceTree = "<group>"; };
+		428021F11EC938D8003E8F96 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryTableViewController.swift; path = ../HistoryTableViewController.swift; sourceTree = "<group>"; };
 		428021FB1ECA3DFA003E8F96 /* NumberKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberKey.swift; sourceTree = "<group>"; };
 		428021FD1ECA4C50003E8F96 /* Literals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Literals.swift; sourceTree = "<group>"; };
 		428021FF1ECA6445003E8F96 /* NumberPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPad.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				425C60041ECACF78009DE6DD /* ImageKey.swift */,
 				428021FF1ECA6445003E8F96 /* NumberPad.swift */,
 				42617CC51ED0EF73000F3DAD /* HistoryTableViewCell.swift */,
+				426C6D151ED24DF1001419B3 /* DailyHistoryTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -180,11 +185,21 @@
 			isa = PBXGroup;
 			children = (
 				428021E71EC93044003E8F96 /* MainTabBarController.swift */,
-				426C1BF91ECBC1AF004BDC36 /* StatsViewController.swift */,
-				428021F11EC938D8003E8F96 /* HistoryViewController.swift */,
 				428021E51EC8E452003E8F96 /* MainViewController.swift */,
+				426C1BF91ECBC1AF004BDC36 /* StatsViewController.swift */,
+				426C6D121ED22B02001419B3 /* History View Controllers */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		426C6D121ED22B02001419B3 /* History View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				426C6D0E1ED22511001419B3 /* HistoryNavViewController.swift */,
+				428021F11EC938D8003E8F96 /* HistoryTableViewController.swift */,
+				426C6D131ED22B50001419B3 /* SingleDayTableViewController.swift */,
+			);
+			name = "History View Controllers";
 			sourceTree = "<group>";
 		};
 		428021AB1EC8D6FD003E8F96 = {
@@ -211,7 +226,6 @@
 		428021B61EC8D6FE003E8F96 /* Tracker Jawn */ = {
 			isa = PBXGroup;
 			children = (
-				42779DA21ECE602D00F8628E /* DateManager.swift */,
 				428021B71EC8D6FE003E8F96 /* AppDelegate.swift */,
 				428021C01EC8D6FE003E8F96 /* LaunchScreen.storyboard */,
 				428021C31EC8D6FE003E8F96 /* Info.plist */,
@@ -386,14 +400,16 @@
 				426C1C411ECCD25F004BDC36 /* CoreDataManager.swift in Sources */,
 				428022001ECA6445003E8F96 /* NumberPad.swift in Sources */,
 				428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */,
+				426C6D0F1ED22511001419B3 /* HistoryNavViewController.swift in Sources */,
 				42779DAD1ED0E5B400F8628E /* Util.swift in Sources */,
 				425C5FFE1ECA8A93009DE6DD /* InputLabelView.swift in Sources */,
+				426C6D161ED24DF1001419B3 /* DailyHistoryTableViewCell.swift in Sources */,
 				42617CC61ED0EF73000F3DAD /* HistoryTableViewCell.swift in Sources */,
-				42779DA31ECE602D00F8628E /* DateManager.swift in Sources */,
 				428021E61EC8E452003E8F96 /* MainViewController.swift in Sources */,
 				425C60071ECADA81009DE6DD /* ExpenseCalendar.swift in Sources */,
 				428021E81EC93044003E8F96 /* MainTabBarController.swift in Sources */,
-				428021F21EC938D8003E8F96 /* HistoryViewController.swift in Sources */,
+				428021F21EC938D8003E8F96 /* HistoryTableViewController.swift in Sources */,
+				426C6D141ED22B50001419B3 /* SingleDayTableViewController.swift in Sources */,
 				42779DAA1ECE7ED000F8628E /* NSDate.swift in Sources */,
 				426C1BFF1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld in Sources */,
 				425C60021ECAC37E009DE6DD /* NumberpadTouchDelegate.swift in Sources */,

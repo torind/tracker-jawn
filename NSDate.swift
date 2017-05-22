@@ -21,4 +21,22 @@ extension NSDate {
         }
         return normalizedDate!.toNSDate()
     }
+    
+    static func priorDate(daysSinceToday : Int) -> NSDate {
+        let calendar = NSCalendar.current
+        var oneDay = DateComponents()
+        oneDay.day = -daysSinceToday
+        return calendar.date(byAdding: oneDay, to: NSDate().toDate())!.toNSDate()
+    }
+    
+    func dayOfWeek() -> Int {
+        let calendar = NSCalendar.current
+        let components = calendar.dateComponents([Calendar.Component.weekday],
+                                                 from: self.toDate())
+        guard (components.weekday != nil) else {
+            fatalError("CurrentDayofWeek returned a nil value")
+        }
+        let day = ((components.weekday! + 7) - 2) % 7
+        return day
+    }
 }

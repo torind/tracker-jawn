@@ -19,6 +19,7 @@ class ExpenseCalendar {
         cdContext = context
         ledger = [[TJDate]]()
         fetchDailyExpenses()
+        ledgerHasTodayCheck()
     }
     
     /**
@@ -26,7 +27,6 @@ class ExpenseCalendar {
      of the ExpenseCalendar
      */
     func fetchDailyExpenses() {
-        var daysThisWeek = Util.currentDayOfWeek()
         
         let fetchRequest : NSFetchRequest<TJDate> = TJDate.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(TJDate.date),
@@ -34,23 +34,16 @@ class ExpenseCalendar {
         cdContext.performAndWait {
             do {
                 let dates = try fetchRequest.execute()
-                print ("Dates fetched: \(dates.count)")
                 if (dates.count == 0) { return } 
                 var week = [TJDate]()
                 for d in dates {
                     week.append(d)
-                    daysThisWeek -= 1
-                    if (daysThisWeek == 0) {
-                        print("Appending week \(self.ledger.count + 1)")
+                    if (d.date!.dayOfWeek() == 0) {
                         self.ledger.append(week)
                         week = [TJDate]()
-                        daysThisWeek = 7
                     }
                 }
-                if (daysThisWeek != 0) {
-                    print("Appending week \(self.ledger.count + 1)")
-                    self.ledger.append(week)
-                }
+                self.ledger.append(week)
             } catch {
                 print("Error recovering TJDates from persistent store")
                 print("\(error): \(error.localizedDescription)")
@@ -105,7 +98,24 @@ class ExpenseCalendar {
         let today = NSDate().noonNormalized()
         let isEqual = recentTJDate.date!.isEqual(today.toDate())
         if (!isEqual) {
-            createTJDateForToday()
+            let daysSince = recentTJDate.daysSinceToday()
+            if (daysSince == 1) {
+                createTJDateForToday()
+            }
+            else {
+                for i in (1...daysSince).reversed() {
+                    let lastWeek = ledger[0]
+                    let lastDay = lastWeek[0]
+                    if (lastDay.date!.dayOfWeek() == 6) {
+                        let newWeek = [TJDate]()
+                        ledger.insert(newWeek, at: 0)
+                    }
+                    let newDate = TJDate(context: cdContext)
+                    newDate.date = NSDate.priorDate(daysSinceToday: i - 1).noonNormalized()
+                    ledger[0].insert(newDate, at: 0)
+                    print(ledger[0].count)
+                }
+            }
         }
     }
     
@@ -157,7 +167,6 @@ class ExpenseCalendar {
      - returns: the TJDate object added to the ledger
      */
     func createTJDateForToday() {
-        print("Creating a new date for today")
         let date = TJDate(context: cdContext)
         date.date = ExpenseCalendar.todaysDate()
         if (ledger.count == 0) {

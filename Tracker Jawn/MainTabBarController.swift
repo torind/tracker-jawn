@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
 class MainTabBarController: UITabBarController {
     private let coreDataManager : CoreDataManager
     private var mainViewController : MainViewController?
-    private var historyViewController : HistoryViewController?
+    private var historyNavViewController : HistoryNavViewController?
     private var statsViewController : StatsViewController?
     private var expenseCalendar : ExpenseCalendar
     
     init() {
-        coreDataManager = CoreDataManager(modelName: "TrackerJawn")
+        coreDataManager = CoreDataManager.getInstance()
         expenseCalendar = ExpenseCalendar(context: coreDataManager.managedObjectContext)
         super.init(nibName: nil, bundle: nil)
     }
@@ -30,11 +31,11 @@ class MainTabBarController: UITabBarController {
         
         //Initalize View Controllers
         mainViewController = MainViewController(expenseCalendar : expenseCalendar)
-        historyViewController = HistoryViewController(expenseCalendar : expenseCalendar)
+        historyNavViewController = HistoryNavViewController(expenseCalendar : expenseCalendar)
         statsViewController = StatsViewController()
         
         
-        let controllers : [UIViewController] = [mainViewController!, statsViewController!, historyViewController!]
+        let controllers : [UIViewController] = [mainViewController!, statsViewController!, historyNavViewController!]
         
         self.viewControllers = controllers
         
@@ -48,7 +49,7 @@ class MainTabBarController: UITabBarController {
             image: UIImage(named: "icon-me"),
             tag: 3)
         
-        historyViewController!.tabBarItem = UITabBarItem(
+        historyNavViewController!.tabBarItem = UITabBarItem(
             title: "History",
             image: UIImage(named: "icon-history"),
             tag: 2)

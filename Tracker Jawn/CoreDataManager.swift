@@ -10,6 +10,7 @@ import CoreData
 
 final class CoreDataManager {
     let modelName : String
+    static var instance : CoreDataManager?
     
     private(set) lazy var managedObjectContext : NSManagedObjectContext = {
         let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
@@ -53,6 +54,7 @@ final class CoreDataManager {
     init (modelName : String) {
         self.modelName = modelName
         setupNotificationHandling()
+        CoreDataManager.instance = self
     }
     
     private func setupNotificationHandling() {
@@ -61,7 +63,7 @@ final class CoreDataManager {
         notificationCenter.addObserver(self, selector: #selector(saveChanges(_:)), name: Notification.Name.UIApplicationDidEnterBackground, object: nil)
     }
     
-    @objc func saveChanges(_ notification: Notification) {
+    @objc func saveChanges(_ notification: Notification?) {
         saveChanges()
     }
     
@@ -74,6 +76,15 @@ final class CoreDataManager {
         } catch {
             print("Unable to save managed object context")
             print("\(error), \(error.localizedDescription)")
+        }
+    }
+    
+    static func getInstance() -> CoreDataManager {
+        if (instance == nil) {
+            return CoreDataManager(modelName: "TrackerJawn")
+        }
+        else {
+            return instance!
         }
     }
 }

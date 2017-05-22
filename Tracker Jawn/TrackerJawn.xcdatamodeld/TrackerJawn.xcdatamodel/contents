@@ -6,10 +6,11 @@
     </entity>
     <entity name="TJExpense" representedClassName="TJExpense" syncable="YES" codeGenerationType="class">
         <attribute name="amount" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="date" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="TJDate" inverseName="expenses" inverseEntity="TJDate" syncable="YES"/>
     </entity>
     <elements>
         <element name="TJDate" positionX="-299" positionY="-75" width="128" height="73"/>
-        <element name="TJExpense" positionX="-54" positionY="0" width="128" height="73"/>
+        <element name="TJExpense" positionX="-54" positionY="0" width="128" height="90"/>
     </elements>
 </model>

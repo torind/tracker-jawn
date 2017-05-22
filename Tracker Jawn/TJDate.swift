@@ -9,6 +9,7 @@
 import Foundation
 
 extension TJDate {
+    
     func sumExpenses() -> Double {
         let expenseSet = self.expenses
         guard (expenseSet != nil) else { return 0.0 }
@@ -23,12 +24,14 @@ extension TJDate {
     func createAndAddExpense(amount : Double) {
         let expense = TJExpense(context: self.managedObjectContext!)
         expense.amount = amount
+        expense.createdAt = NSDate()
         self.addToExpenses(expense)
     }
     
     func daysSinceToday() -> Int {
         let calendar = NSCalendar.current
         let today = NSDate().noonNormalized()
+        print("Jawnson \(self.date!)")
         let components = calendar.dateComponents([Calendar.Component.day],
                                                  from: self.date!.toDate(),
                                                  to: today.toDate())

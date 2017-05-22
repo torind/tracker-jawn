@@ -35,7 +35,7 @@ class HistoryTableViewCell: UITableViewCell {
     
     func setDate(date : NSDate) {
         let formatter = DateFormatter()
-        formatter.dateFormat = "E, MMM - d"
+        formatter.dateFormat = "E, MMM d"
         let dateString = formatter.string(from: date.toDate())
         dateLabel.text = dateString
     }
