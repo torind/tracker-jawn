@@ -8,8 +8,7 @@
 
 import UIKit
 
-class HistoryNavViewController: UINavigationController, UINavigationControllerDelegate {
-    
+class HistoryNavController: UINavigationController, UINavigationControllerDelegate {
     var expenseCalendar : ExpenseCalendar?
     var historyViewController : HistoryTableViewController?
     
@@ -31,34 +30,34 @@ class HistoryNavViewController: UINavigationController, UINavigationControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.navigationBar.isTranslucent = false
+        self.navigationBar.barTintColor = Constants.NAV_COLOR
     }
     
     func navigationController(_ navigationController: UINavigationController,
                               willShow viewController: UIViewController,
                               animated: Bool) {
         if (self.viewControllers.count > 1) {
-            viewController.navigationItem.setLeftBarButton(backButtonFactory(), animated: false)
+            let backButtonImage = UIImage(named: "back-button")!
+                .withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+            let backButton = UIBarButtonItem(image: backButtonImage,
+                                             style: UIBarButtonItemStyle.plain,
+                                             target: self,
+                                             action: #selector(backButtonPressed(_:)))
+            viewController.navigationItem.setLeftBarButton(backButton, animated: false)
         }
-    }
-    
-    func backButtonFactory() -> UIBarButtonItem {
-        let backButtonImage = UIImage(named: "back-button")!
-                                .withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-        let backButton = UIBarButtonItem(image: backButtonImage,
-                                         style: UIBarButtonItemStyle.plain,
-                                         target: self,
-                                         action: #selector(backButtonPressed(_:)))
-        return backButton
     }
     
     func backButtonPressed(_ param : Bool) {
         popViewController(animated: true)
+    }
+    
+    func addShadow() {
+        navigationBar.layer.shadowColor = UIColor.black.cgColor
+        navigationBar.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        navigationBar.layer.shadowRadius = 1.0
+        navigationBar.layer.shadowOpacity = 0.8
+        navigationBar.layer.masksToBounds = false
     }
     
 }

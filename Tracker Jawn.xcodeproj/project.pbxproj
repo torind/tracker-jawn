@@ -8,16 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		425C5FFE1ECA8A93009DE6DD /* InputLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C5FFD1ECA8A93009DE6DD /* InputLabelView.swift */; };
-		425C60021ECAC37E009DE6DD /* NumberpadTouchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60011ECAC37E009DE6DD /* NumberpadTouchDelegate.swift */; };
 		425C60051ECACF78009DE6DD /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60041ECACF78009DE6DD /* ImageKey.swift */; };
 		425C60071ECADA81009DE6DD /* ExpenseCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60061ECADA81009DE6DD /* ExpenseCalendar.swift */; };
 		42617CC61ED0EF73000F3DAD /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42617CC51ED0EF73000F3DAD /* HistoryTableViewCell.swift */; };
-		426C1BFA1ECBC1AF004BDC36 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1BF91ECBC1AF004BDC36 /* StatsViewController.swift */; };
+		426C1BFA1ECBC1AF004BDC36 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1BF91ECBC1AF004BDC36 /* ProfileViewController.swift */; };
 		426C1BFF1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 426C1BFD1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld */; };
 		426C1C411ECCD25F004BDC36 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C401ECCD25F004BDC36 /* CoreDataManager.swift */; };
 		426C1C441ECD2041004BDC36 /* TJDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C431ECD2041004BDC36 /* TJDate.swift */; };
 		426C1C481ECD2C77004BDC36 /* TJDateTest_Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1C471ECD2C77004BDC36 /* TJDateTest_Initializer.swift */; };
-		426C6D0F1ED22511001419B3 /* HistoryNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C6D0E1ED22511001419B3 /* HistoryNavViewController.swift */; };
+		426C6D0F1ED22511001419B3 /* HistoryNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C6D0E1ED22511001419B3 /* HistoryNavController.swift */; };
 		426C6D141ED22B50001419B3 /* SingleDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C6D131ED22B50001419B3 /* SingleDayTableViewController.swift */; };
 		426C6D161ED24DF1001419B3 /* DailyHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C6D151ED24DF1001419B3 /* DailyHistoryTableViewCell.swift */; };
 		42726D961ED35400006D821B /* TJWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42726D951ED35400006D821B /* TJWeek.swift */; };
@@ -35,6 +34,25 @@
 		428021FC1ECA3DFA003E8F96 /* NumberKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021FB1ECA3DFA003E8F96 /* NumberKey.swift */; };
 		428021FE1ECA4C50003E8F96 /* Literals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021FD1ECA4C50003E8F96 /* Literals.swift */; };
 		428022001ECA6445003E8F96 /* NumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428021FF1ECA6445003E8F96 /* NumberPad.swift */; };
+		4294ABFC1ED8F00A00D5CC52 /* ProfileStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294ABFB1ED8F00A00D5CC52 /* ProfileStatView.swift */; };
+		4294ABFE1EDA0E7A00D5CC52 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294ABFD1EDA0E7A00D5CC52 /* UIColor.swift */; };
+		4294AC381EDB588E00D5CC52 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4294AC2E1EDB588E00D5CC52 /* OpenSans-Bold.ttf */; };
+		4294AC391EDB588E00D5CC52 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4294AC2F1EDB588E00D5CC52 /* OpenSans-BoldItalic.ttf */; };
+		4294AC3A1EDB588E00D5CC52 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4294AC301EDB588E00D5CC52 /* OpenSans-ExtraBold.ttf */; };
+		4294AC3B1EDB588E00D5CC52 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4294AC311EDB588E00D5CC52 /* OpenSans-ExtraBoldItalic.ttf */; };
+		4294AC3C1EDB588E00D5CC52 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4294AC321EDB588E00D5CC52 /* OpenSans-Italic.ttf */; };
+		4294AC3D1EDB588E00D5CC52 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4294AC331EDB588E00D5CC52 /* OpenSans-Light.ttf */; };
+		4294AC3E1EDB588E00D5CC52 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4294AC341EDB588E00D5CC52 /* OpenSans-LightItalic.ttf */; };
+		4294AC3F1EDB588E00D5CC52 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4294AC351EDB588E00D5CC52 /* OpenSans-Regular.ttf */; };
+		4294AC401EDB588E00D5CC52 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4294AC361EDB588E00D5CC52 /* OpenSans-Semibold.ttf */; };
+		4294AC411EDB588E00D5CC52 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4294AC371EDB588E00D5CC52 /* OpenSans-SemiboldItalic.ttf */; };
+		4294AC421EDB591800D5CC52 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 428021CE1EC8D6FE003E8F96 /* Info.plist */; };
+		42AA1B081ED3AE6E003697D6 /* ProfileNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA1B071ED3AE6E003697D6 /* ProfileNavController.swift */; };
+		42AA1B0B1ED3B07F003697D6 /* UtilFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA1B0A1ED3B07F003697D6 /* UtilFactories.swift */; };
+		42C6AA301ED7877600F9FFCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6AA2F1ED7877600F9FFCF /* ProfileView.swift */; };
+		4A70CCE2BD5DED4E3BAF4424 /* Pods_Tracker_JawnTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB42C473835A3381E7CE508A /* Pods_Tracker_JawnTests.framework */; };
+		4FF64CE6C6FB8ED98C80A562 /* Pods_Tracker_Jawn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B287768C249090155D2D93 /* Pods_Tracker_Jawn.framework */; };
+		C11DB46FB02E9C1B046AF266 /* Pods_Tracker_JawnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18263C821059B5F3C19D026 /* Pods_Tracker_JawnUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,18 +72,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4294AC5C1EDB686C00D5CC52 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1952D7DA8E3715B54D9E77D7 /* Pods-Tracker JawnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker JawnTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker JawnTests/Pods-Tracker JawnTests.debug.xcconfig"; sourceTree = "<group>"; };
+		25B287768C249090155D2D93 /* Pods_Tracker_Jawn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tracker_Jawn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B04A020A882A77BD4B9C5E2 /* Pods-Tracker JawnUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker JawnUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker JawnUITests/Pods-Tracker JawnUITests.release.xcconfig"; sourceTree = "<group>"; };
 		425C5FFD1ECA8A93009DE6DD /* InputLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputLabelView.swift; path = ../InputLabelView.swift; sourceTree = "<group>"; };
-		425C60011ECAC37E009DE6DD /* NumberpadTouchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberpadTouchDelegate.swift; sourceTree = "<group>"; };
 		425C60041ECACF78009DE6DD /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
 		425C60061ECADA81009DE6DD /* ExpenseCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCalendar.swift; sourceTree = "<group>"; };
 		42617CC51ED0EF73000F3DAD /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
-		426C1BF91ECBC1AF004BDC36 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		426C1BF91ECBC1AF004BDC36 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		426C1BFE1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrackerJawn.xcdatamodel; sourceTree = "<group>"; };
 		426C1C401ECCD25F004BDC36 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		426C1C431ECD2041004BDC36 /* TJDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJDate.swift; sourceTree = "<group>"; };
 		426C1C471ECD2C77004BDC36 /* TJDateTest_Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJDateTest_Initializer.swift; sourceTree = "<group>"; };
-		426C6D0E1ED22511001419B3 /* HistoryNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNavViewController.swift; sourceTree = "<group>"; };
+		426C6D0E1ED22511001419B3 /* HistoryNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNavController.swift; sourceTree = "<group>"; };
 		426C6D131ED22B50001419B3 /* SingleDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDayTableViewController.swift; sourceTree = "<group>"; };
 		426C6D151ED24DF1001419B3 /* DailyHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		42726D951ED35400006D821B /* TJWeek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJWeek.swift; sourceTree = "<group>"; };
@@ -89,6 +122,27 @@
 		428021FB1ECA3DFA003E8F96 /* NumberKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberKey.swift; sourceTree = "<group>"; };
 		428021FD1ECA4C50003E8F96 /* Literals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Literals.swift; sourceTree = "<group>"; };
 		428021FF1ECA6445003E8F96 /* NumberPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPad.swift; sourceTree = "<group>"; };
+		4294ABFB1ED8F00A00D5CC52 /* ProfileStatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileStatView.swift; sourceTree = "<group>"; };
+		4294ABFD1EDA0E7A00D5CC52 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		4294AC2E1EDB588E00D5CC52 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		4294AC2F1EDB588E00D5CC52 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		4294AC301EDB588E00D5CC52 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		4294AC311EDB588E00D5CC52 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		4294AC321EDB588E00D5CC52 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		4294AC331EDB588E00D5CC52 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		4294AC341EDB588E00D5CC52 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		4294AC351EDB588E00D5CC52 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		4294AC361EDB588E00D5CC52 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		4294AC371EDB588E00D5CC52 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		42AA1B071ED3AE6E003697D6 /* ProfileNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavController.swift; sourceTree = "<group>"; };
+		42AA1B0A1ED3B07F003697D6 /* UtilFactories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilFactories.swift; sourceTree = "<group>"; };
+		42C6AA2F1ED7877600F9FFCF /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		585D1C2312A763660EED0F53 /* Pods-Tracker Jawn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker Jawn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker Jawn/Pods-Tracker Jawn.release.xcconfig"; sourceTree = "<group>"; };
+		9DD690B8F2E1738F46A06FFB /* Pods-Tracker JawnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker JawnTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker JawnTests/Pods-Tracker JawnTests.release.xcconfig"; sourceTree = "<group>"; };
+		B4E1A80DA09C8EB16A422278 /* Pods-Tracker Jawn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker Jawn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker Jawn/Pods-Tracker Jawn.debug.xcconfig"; sourceTree = "<group>"; };
+		C18263C821059B5F3C19D026 /* Pods_Tracker_JawnUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tracker_JawnUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E847E33FC8C9E5B2551035BA /* Pods-Tracker JawnUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker JawnUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker JawnUITests/Pods-Tracker JawnUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB42C473835A3381E7CE508A /* Pods_Tracker_JawnTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tracker_JawnTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF64CE6C6FB8ED98C80A562 /* Pods_Tracker_Jawn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A70CCE2BD5DED4E3BAF4424 /* Pods_Tracker_JawnTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C11DB46FB02E9C1B046AF266 /* Pods_Tracker_JawnUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +182,8 @@
 				428021FF1ECA6445003E8F96 /* NumberPad.swift */,
 				42617CC51ED0EF73000F3DAD /* HistoryTableViewCell.swift */,
 				426C6D151ED24DF1001419B3 /* DailyHistoryTableViewCell.swift */,
+				42C6AA2F1ED7877600F9FFCF /* ProfileView.swift */,
+				4294ABFB1ED8F00A00D5CC52 /* ProfileStatView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -132,19 +191,14 @@
 		425C60001ECA8B48009DE6DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4294AC4E1EDB67FF00D5CC52 /* Libraries */,
+				4294ABFF1EDA506C00D5CC52 /* Fonts */,
+				42AA1B091ED3B05A003697D6 /* Factories */,
 				426C1C451ECD2C3B004BDC36 /* Data Initializers */,
 				426C1C421ECCE851004BDC36 /* Extensions */,
 				428021FD1ECA4C50003E8F96 /* Literals.swift */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		425C60031ECAC388009DE6DD /* Interfaces */ = {
-			isa = PBXGroup;
-			children = (
-				425C60011ECAC37E009DE6DD /* NumberpadTouchDelegate.swift */,
-			);
-			name = Interfaces;
 			sourceTree = "<group>";
 		};
 		425C60081ECADA88009DE6DD /* Models */ = {
@@ -172,6 +226,7 @@
 				42726D951ED35400006D821B /* TJWeek.swift */,
 				42779DA91ECE7ED000F8628E /* NSDate.swift */,
 				42779DA61ECE7EC400F8628E /* Date.swift */,
+				4294ABFD1EDA0E7A00D5CC52 /* UIColor.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -189,7 +244,7 @@
 			children = (
 				428021E71EC93044003E8F96 /* MainTabBarController.swift */,
 				428021E51EC8E452003E8F96 /* MainViewController.swift */,
-				426C1BF91ECBC1AF004BDC36 /* StatsViewController.swift */,
+				42AA1B061ED3AE3D003697D6 /* Profile View Controllers */,
 				426C6D121ED22B02001419B3 /* History View Controllers */,
 			);
 			name = "View Controllers";
@@ -198,7 +253,7 @@
 		426C6D121ED22B02001419B3 /* History View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				426C6D0E1ED22511001419B3 /* HistoryNavViewController.swift */,
+				426C6D0E1ED22511001419B3 /* HistoryNavController.swift */,
 				428021F11EC938D8003E8F96 /* HistoryTableViewController.swift */,
 				426C6D131ED22B50001419B3 /* SingleDayTableViewController.swift */,
 			);
@@ -213,6 +268,8 @@
 				428021CB1EC8D6FE003E8F96 /* Tracker JawnTests */,
 				428021D61EC8D6FE003E8F96 /* Tracker JawnUITests */,
 				428021B51EC8D6FE003E8F96 /* Products */,
+				6BDB21ACE2561E756E8C284A /* Pods */,
+				FAE3B0280FA2486F4B60D046 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,10 +290,9 @@
 				428021C01EC8D6FE003E8F96 /* LaunchScreen.storyboard */,
 				428021C31EC8D6FE003E8F96 /* Info.plist */,
 				426C1C491ECD2D9C004BDC36 /* View Controllers */,
+				425C5FFF1ECA8B2B009DE6DD /* Views */,
 				426C1C3F1ECCD245004BDC36 /* DataManagers */,
 				425C60081ECADA88009DE6DD /* Models */,
-				425C5FFF1ECA8B2B009DE6DD /* Views */,
-				425C60031ECAC388009DE6DD /* Interfaces */,
 				425C60001ECA8B48009DE6DD /* Resources */,
 			);
 			path = "Tracker Jawn";
@@ -245,8 +301,8 @@
 		428021CB1EC8D6FE003E8F96 /* Tracker JawnTests */ = {
 			isa = PBXGroup;
 			children = (
-				428021CC1EC8D6FE003E8F96 /* Tracker_JawnTests.swift */,
 				428021CE1EC8D6FE003E8F96 /* Info.plist */,
+				428021CC1EC8D6FE003E8F96 /* Tracker_JawnTests.swift */,
 			);
 			path = "Tracker JawnTests";
 			sourceTree = "<group>";
@@ -260,6 +316,78 @@
 			path = "Tracker JawnUITests";
 			sourceTree = "<group>";
 		};
+		4294ABFF1EDA506C00D5CC52 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4294AC2D1EDB588E00D5CC52 /* Open_Sans */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		4294AC2D1EDB588E00D5CC52 /* Open_Sans */ = {
+			isa = PBXGroup;
+			children = (
+				4294AC2E1EDB588E00D5CC52 /* OpenSans-Bold.ttf */,
+				4294AC2F1EDB588E00D5CC52 /* OpenSans-BoldItalic.ttf */,
+				4294AC301EDB588E00D5CC52 /* OpenSans-ExtraBold.ttf */,
+				4294AC311EDB588E00D5CC52 /* OpenSans-ExtraBoldItalic.ttf */,
+				4294AC321EDB588E00D5CC52 /* OpenSans-Italic.ttf */,
+				4294AC331EDB588E00D5CC52 /* OpenSans-Light.ttf */,
+				4294AC341EDB588E00D5CC52 /* OpenSans-LightItalic.ttf */,
+				4294AC351EDB588E00D5CC52 /* OpenSans-Regular.ttf */,
+				4294AC361EDB588E00D5CC52 /* OpenSans-Semibold.ttf */,
+				4294AC371EDB588E00D5CC52 /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = Open_Sans;
+			sourceTree = "<group>";
+		};
+		4294AC4E1EDB67FF00D5CC52 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		42AA1B061ED3AE3D003697D6 /* Profile View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42AA1B071ED3AE6E003697D6 /* ProfileNavController.swift */,
+				426C1BF91ECBC1AF004BDC36 /* ProfileViewController.swift */,
+			);
+			name = "Profile View Controllers";
+			sourceTree = "<group>";
+		};
+		42AA1B091ED3B05A003697D6 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				42AA1B0A1ED3B07F003697D6 /* UtilFactories.swift */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+		6BDB21ACE2561E756E8C284A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4E1A80DA09C8EB16A422278 /* Pods-Tracker Jawn.debug.xcconfig */,
+				585D1C2312A763660EED0F53 /* Pods-Tracker Jawn.release.xcconfig */,
+				1952D7DA8E3715B54D9E77D7 /* Pods-Tracker JawnTests.debug.xcconfig */,
+				9DD690B8F2E1738F46A06FFB /* Pods-Tracker JawnTests.release.xcconfig */,
+				E847E33FC8C9E5B2551035BA /* Pods-Tracker JawnUITests.debug.xcconfig */,
+				2B04A020A882A77BD4B9C5E2 /* Pods-Tracker JawnUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FAE3B0280FA2486F4B60D046 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25B287768C249090155D2D93 /* Pods_Tracker_Jawn.framework */,
+				EB42C473835A3381E7CE508A /* Pods_Tracker_JawnTests.framework */,
+				C18263C821059B5F3C19D026 /* Pods_Tracker_JawnUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -267,9 +395,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 428021DC1EC8D6FE003E8F96 /* Build configuration list for PBXNativeTarget "Tracker Jawn" */;
 			buildPhases = (
+				3EB5D10826DCDF0360EBD725 /* [CP] Check Pods Manifest.lock */,
 				428021B01EC8D6FE003E8F96 /* Sources */,
 				428021B11EC8D6FE003E8F96 /* Frameworks */,
 				428021B21EC8D6FE003E8F96 /* Resources */,
+				4294AC5C1EDB686C00D5CC52 /* Embed Frameworks */,
+				89A4D702A3291F583E1E70A7 /* [CP] Embed Pods Frameworks */,
+				13BE9847A35530264485BD52 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,9 +416,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 428021DF1EC8D6FE003E8F96 /* Build configuration list for PBXNativeTarget "Tracker JawnTests" */;
 			buildPhases = (
+				F7C0E7112183A6544B76DC26 /* [CP] Check Pods Manifest.lock */,
 				428021C41EC8D6FE003E8F96 /* Sources */,
 				428021C51EC8D6FE003E8F96 /* Frameworks */,
 				428021C61EC8D6FE003E8F96 /* Resources */,
+				0D8CD8D3A5437A7BC1A093A0 /* [CP] Embed Pods Frameworks */,
+				B06ADE7853FB8750A602C138 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,9 +437,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 428021E21EC8D6FE003E8F96 /* Build configuration list for PBXNativeTarget "Tracker JawnUITests" */;
 			buildPhases = (
+				4466F50EA6B9EE9C46430320 /* [CP] Check Pods Manifest.lock */,
 				428021CF1EC8D6FE003E8F96 /* Sources */,
 				428021D01EC8D6FE003E8F96 /* Frameworks */,
 				428021D11EC8D6FE003E8F96 /* Resources */,
+				4033C356B1370FA76A958203 /* [CP] Embed Pods Frameworks */,
+				1A1AFD51B6FE9C2640E63C73 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -370,8 +508,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4294AC3D1EDB588E00D5CC52 /* OpenSans-Light.ttf in Resources */,
 				428021C21EC8D6FE003E8F96 /* LaunchScreen.storyboard in Resources */,
+				4294AC421EDB591800D5CC52 /* Info.plist in Resources */,
+				4294AC3E1EDB588E00D5CC52 /* OpenSans-LightItalic.ttf in Resources */,
+				4294AC401EDB588E00D5CC52 /* OpenSans-Semibold.ttf in Resources */,
+				4294AC411EDB588E00D5CC52 /* OpenSans-SemiboldItalic.ttf in Resources */,
+				4294AC381EDB588E00D5CC52 /* OpenSans-Bold.ttf in Resources */,
+				4294AC391EDB588E00D5CC52 /* OpenSans-BoldItalic.ttf in Resources */,
+				4294AC3F1EDB588E00D5CC52 /* OpenSans-Regular.ttf in Resources */,
 				428021BF1EC8D6FE003E8F96 /* Assets.xcassets in Resources */,
+				4294AC3C1EDB588E00D5CC52 /* OpenSans-Italic.ttf in Resources */,
+				4294AC3B1EDB588E00D5CC52 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				4294AC3A1EDB588E00D5CC52 /* OpenSans-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,20 +540,162 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D8CD8D3A5437A7BC1A093A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tracker JawnTests/Pods-Tracker JawnTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13BE9847A35530264485BD52 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tracker Jawn/Pods-Tracker Jawn-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A1AFD51B6FE9C2640E63C73 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tracker JawnUITests/Pods-Tracker JawnUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EB5D10826DCDF0360EBD725 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4033C356B1370FA76A958203 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tracker JawnUITests/Pods-Tracker JawnUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4466F50EA6B9EE9C46430320 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		89A4D702A3291F583E1E70A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tracker Jawn/Pods-Tracker Jawn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B06ADE7853FB8750A602C138 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tracker JawnTests/Pods-Tracker JawnTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7C0E7112183A6544B76DC26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		428021B01EC8D6FE003E8F96 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				428021FC1ECA3DFA003E8F96 /* NumberKey.swift in Sources */,
+				42C6AA301ED7877600F9FFCF /* ProfileView.swift in Sources */,
 				42726D961ED35400006D821B /* TJWeek.swift in Sources */,
+				42AA1B0B1ED3B07F003697D6 /* UtilFactories.swift in Sources */,
+				4294ABFE1EDA0E7A00D5CC52 /* UIColor.swift in Sources */,
 				425C60051ECACF78009DE6DD /* ImageKey.swift in Sources */,
 				426C1C481ECD2C77004BDC36 /* TJDateTest_Initializer.swift in Sources */,
 				426C1C441ECD2041004BDC36 /* TJDate.swift in Sources */,
 				426C1C411ECCD25F004BDC36 /* CoreDataManager.swift in Sources */,
+				4294ABFC1ED8F00A00D5CC52 /* ProfileStatView.swift in Sources */,
 				428022001ECA6445003E8F96 /* NumberPad.swift in Sources */,
 				428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */,
-				426C6D0F1ED22511001419B3 /* HistoryNavViewController.swift in Sources */,
+				426C6D0F1ED22511001419B3 /* HistoryNavController.swift in Sources */,
 				42779DAD1ED0E5B400F8628E /* Util.swift in Sources */,
 				425C5FFE1ECA8A93009DE6DD /* InputLabelView.swift in Sources */,
 				426C6D161ED24DF1001419B3 /* DailyHistoryTableViewCell.swift in Sources */,
@@ -412,13 +703,13 @@
 				428021E61EC8E452003E8F96 /* MainViewController.swift in Sources */,
 				425C60071ECADA81009DE6DD /* ExpenseCalendar.swift in Sources */,
 				428021E81EC93044003E8F96 /* MainTabBarController.swift in Sources */,
+				42AA1B081ED3AE6E003697D6 /* ProfileNavController.swift in Sources */,
 				428021F21EC938D8003E8F96 /* HistoryTableViewController.swift in Sources */,
 				426C6D141ED22B50001419B3 /* SingleDayTableViewController.swift in Sources */,
 				42779DAA1ECE7ED000F8628E /* NSDate.swift in Sources */,
 				426C1BFF1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld in Sources */,
-				425C60021ECAC37E009DE6DD /* NumberpadTouchDelegate.swift in Sources */,
 				42779DA71ECE7EC400F8628E /* Date.swift in Sources */,
-				426C1BFA1ECBC1AF004BDC36 /* StatsViewController.swift in Sources */,
+				426C1BFA1ECBC1AF004BDC36 /* ProfileViewController.swift in Sources */,
 				428021FE1ECA4C50003E8F96 /* Literals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,7 +850,9 @@
 		};
 		428021DD1EC8D6FE003E8F96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4E1A80DA09C8EB16A422278 /* Pods-Tracker Jawn.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XYWGLFH42L;
 				INFOPLIST_FILE = "Tracker Jawn/Info.plist";
@@ -573,7 +866,9 @@
 		};
 		428021DE1EC8D6FE003E8F96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 585D1C2312A763660EED0F53 /* Pods-Tracker Jawn.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XYWGLFH42L;
 				INFOPLIST_FILE = "Tracker Jawn/Info.plist";
@@ -587,6 +882,7 @@
 		};
 		428021E01EC8D6FE003E8F96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1952D7DA8E3715B54D9E77D7 /* Pods-Tracker JawnTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -602,6 +898,7 @@
 		};
 		428021E11EC8D6FE003E8F96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DD690B8F2E1738F46A06FFB /* Pods-Tracker JawnTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -617,6 +914,7 @@
 		};
 		428021E31EC8D6FE003E8F96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E847E33FC8C9E5B2551035BA /* Pods-Tracker JawnUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = XYWGLFH42L;
@@ -631,6 +929,7 @@
 		};
 		428021E41EC8D6FE003E8F96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B04A020A882A77BD4B9C5E2 /* Pods-Tracker JawnUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = XYWGLFH42L;

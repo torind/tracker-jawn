@@ -32,6 +32,7 @@ class HistoryTableViewController: UITableViewController, UINavigationControllerD
         tableView.register(HistoryTableViewCell.self, forCellReuseIdentifier: "SpendingHistoryCell")
         tableView.dataSource = self
         tableView.delegate = self
+        view.backgroundColor = Constants.BACKGROUND_COLOR
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -28,6 +28,7 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
         view.addSubview(userInputLabel)
         view.addSubview(numberpad)
         view.setNeedsUpdateConstraints()
+        view.backgroundColor = Constants.BACKGROUND_COLOR
         updateDailyTotal()
     }
     
@@ -45,7 +46,7 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
     }
     
     func updateDailyTotal() {
-        dailyUsageCount.text = "$" + String(format: "%.2f", expenseCalendar.getTodaysTotal())
+        dailyUsageCount.text = Util.formatCurrency(amount: expenseCalendar.getTodaysTotal())
     }
     
     // ~~~~ HANDLER METHODS ~~~~ //

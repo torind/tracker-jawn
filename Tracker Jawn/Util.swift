@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class Util {
     
@@ -26,4 +26,9 @@ class Util {
         print("Current weekday: \(day)")
         return day
     }
+    
+    static func formatCurrency(amount : Double) -> String {
+        return "$" + String(format: "%.2f", amount)
+    }
+    
 }

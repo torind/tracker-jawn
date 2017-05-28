@@ -18,6 +18,8 @@ class HistoryTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        backgroundColor = Constants.CELL_COLOR
+        
         dateLabel.frame.size = CGSize(width: (frame.width * DATE_PROPORTION) - DATE_PADDING,
                                       height: frame.height)
         dateLabel.frame.origin = CGPoint(x: DATE_PADDING,

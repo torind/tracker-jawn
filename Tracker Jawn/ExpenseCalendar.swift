@@ -122,6 +122,33 @@ class ExpenseCalendar {
         return date
     }
     
+    func movingAverage(numDays : Int) -> Double {
+        let _ = todaysTJDate()
+        var weekNum = 0
+        var sum = 0.0
+        var count = 0
+        while (count != numDays) {
+            if (weekNum >= ledger.count) {
+                break;
+            }
+            let week = ledger[weekNum]
+            for d in week.getDescendingDates() {
+                if (count == numDays) {
+                    break;
+                }
+                else {
+                    sum += d.sumExpenses()
+                    count += 1
+                }
+            }
+            if (count == numDays) {
+                break;
+            }
+            weekNum += 1
+        }
+        return sum / Double(count)
+    }
+    
     func numWeeks() -> Int {
         return ledger.count
     }

@@ -20,6 +20,7 @@ class SingleDayTableViewController: UITableViewController {
         tableView.register(DailyHistoryTableViewCell.self,
                            forCellReuseIdentifier: "DailyHistoryTableCell")
         self.tableView.allowsMultipleSelectionDuringEditing = false;
+        view.backgroundColor = Constants.BACKGROUND_COLOR
     }
     
     required init?(coder aDecoder: NSCoder) {

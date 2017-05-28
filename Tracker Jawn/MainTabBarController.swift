@@ -12,8 +12,8 @@ import CoreData
 class MainTabBarController: UITabBarController {
     private let coreDataManager : CoreDataManager
     private var mainViewController : MainViewController?
-    private var historyNavViewController : HistoryNavViewController?
-    private var statsViewController : StatsViewController?
+    private var historyNavController : HistoryNavController?
+    private var profileNavController : ProfileNavController?
     private var expenseCalendar : ExpenseCalendar
     
     init() {
@@ -31,11 +31,13 @@ class MainTabBarController: UITabBarController {
         
         //Initalize View Controllers
         mainViewController = MainViewController(expenseCalendar : expenseCalendar)
-        historyNavViewController = HistoryNavViewController(expenseCalendar : expenseCalendar)
-        statsViewController = StatsViewController()
+        historyNavController = HistoryNavController(expenseCalendar : expenseCalendar)
+        profileNavController = ProfileNavController(expenseCalendar: expenseCalendar)
         
         
-        let controllers : [UIViewController] = [mainViewController!, statsViewController!, historyNavViewController!]
+        let controllers : [UIViewController] = [mainViewController!, profileNavController!, historyNavController!]
+        
+        self.tabBar.barTintColor = Constants.NAV_COLOR
         
         self.viewControllers = controllers
         
@@ -44,12 +46,12 @@ class MainTabBarController: UITabBarController {
             image: UIImage(named: "icon-home"),
             tag: 1)
         
-        statsViewController!.tabBarItem = UITabBarItem(
+        profileNavController!.tabBarItem = UITabBarItem(
             title: "Me",
             image: UIImage(named: "icon-me"),
             tag: 3)
         
-        historyNavViewController!.tabBarItem = UITabBarItem(
+        historyNavController!.tabBarItem = UITabBarItem(
             title: "History",
             image: UIImage(named: "icon-history"),
             tag: 2)

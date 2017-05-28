@@ -19,6 +19,7 @@ class DailyHistoryTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        backgroundColor = Constants.CELL_COLOR
         
         //Time Label Frame
         let timeLabelWidth = (frame.width * TIME_PROPORTION) - TIME_PADDING
