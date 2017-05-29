@@ -50,6 +50,7 @@
 		42AA1B081ED3AE6E003697D6 /* ProfileNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA1B071ED3AE6E003697D6 /* ProfileNavController.swift */; };
 		42AA1B0B1ED3B07F003697D6 /* UtilFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA1B0A1ED3B07F003697D6 /* UtilFactories.swift */; };
 		42C6AA301ED7877600F9FFCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6AA2F1ED7877600F9FFCF /* ProfileView.swift */; };
+		42D0A3021EDBA547004084F5 /* ChartFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0A3011EDBA547004084F5 /* ChartFormatters.swift */; };
 		4A70CCE2BD5DED4E3BAF4424 /* Pods_Tracker_JawnTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB42C473835A3381E7CE508A /* Pods_Tracker_JawnTests.framework */; };
 		4FF64CE6C6FB8ED98C80A562 /* Pods_Tracker_Jawn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B287768C249090155D2D93 /* Pods_Tracker_Jawn.framework */; };
 		C11DB46FB02E9C1B046AF266 /* Pods_Tracker_JawnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18263C821059B5F3C19D026 /* Pods_Tracker_JawnUITests.framework */; };
@@ -137,6 +138,7 @@
 		42AA1B071ED3AE6E003697D6 /* ProfileNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavController.swift; sourceTree = "<group>"; };
 		42AA1B0A1ED3B07F003697D6 /* UtilFactories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilFactories.swift; sourceTree = "<group>"; };
 		42C6AA2F1ED7877600F9FFCF /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		42D0A3011EDBA547004084F5 /* ChartFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartFormatters.swift; sourceTree = "<group>"; };
 		585D1C2312A763660EED0F53 /* Pods-Tracker Jawn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker Jawn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker Jawn/Pods-Tracker Jawn.release.xcconfig"; sourceTree = "<group>"; };
 		9DD690B8F2E1738F46A06FFB /* Pods-Tracker JawnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker JawnTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker JawnTests/Pods-Tracker JawnTests.release.xcconfig"; sourceTree = "<group>"; };
 		B4E1A80DA09C8EB16A422278 /* Pods-Tracker Jawn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker Jawn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker Jawn/Pods-Tracker Jawn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				426C1C451ECD2C3B004BDC36 /* Data Initializers */,
 				426C1C421ECCE851004BDC36 /* Extensions */,
 				428021FD1ECA4C50003E8F96 /* Literals.swift */,
+				42D0A3011EDBA547004084F5 /* ChartFormatters.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */,
 				426C6D0F1ED22511001419B3 /* HistoryNavController.swift in Sources */,
 				42779DAD1ED0E5B400F8628E /* Util.swift in Sources */,
+				42D0A3021EDBA547004084F5 /* ChartFormatters.swift in Sources */,
 				425C5FFE1ECA8A93009DE6DD /* InputLabelView.swift in Sources */,
 				426C6D161ED24DF1001419B3 /* DailyHistoryTableViewCell.swift in Sources */,
 				42617CC61ED0EF73000F3DAD /* HistoryTableViewCell.swift in Sources */,

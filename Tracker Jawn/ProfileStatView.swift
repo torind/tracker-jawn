@@ -9,16 +9,10 @@
 import UIKit
 
 class ProfileStatView: UIView {
-    let H_PADDING = CGFloat(20.0)
-    var gradient : CAGradientLayer!
+    let H_PADDING = CGFloat(30.0)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = Constants.BACKGROUND_COLOR
-        
-        self.backgroundColor = UIColor(hex: 0x34495E)
-        
-        createGradientOverlay()
         
         addSubview(label)
         addSubview(field)
@@ -39,7 +33,6 @@ class ProfileStatView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        gradient.frame = bounds
         
         let label_h = CGFloat(24.0)
         let label_w = frame.width / 2 - H_PADDING
@@ -79,14 +72,6 @@ class ProfileStatView: UIView {
         view.textColor = UIColor.white
         return view
     }()
-    
-    func createGradientOverlay() {
-        gradient = CAGradientLayer()
-        let light = UIColor.black.withAlphaComponent(0.0).cgColor
-        let dark = UIColor.black.withAlphaComponent(0.2).cgColor
-        gradient.colors = [light, dark]
-        self.layer.addSublayer(gradient)
-    }
     
 
 }

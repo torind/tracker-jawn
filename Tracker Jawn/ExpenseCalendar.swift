@@ -175,5 +175,18 @@ class ExpenseCalendar {
         guard (day < daysOfWeek.count) else { return nil }
         return daysOfWeek[day]
     }
+    
+    func dates(approxBufferSize : Int) -> [TJDate] {
+        let _ = todaysTJDate()
+        let numWeeks = Int(ceil(Double(approxBufferSize) / 7.0))
+        var dates = [TJDate]()
+        for i in 0...numWeeks {
+            if (i >= ledger.count) {
+                break
+            }
+            dates += ledger[i].getDescendingDates()
+        }
+        return dates
+    }
 
 }
