@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4257DD5B1EEDBAF7003DEAC1 /* AddExpenseToDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4257DD5A1EEDBAF7003DEAC1 /* AddExpenseToDayViewController.swift */; };
 		425C5FFE1ECA8A93009DE6DD /* InputLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C5FFD1ECA8A93009DE6DD /* InputLabelView.swift */; };
 		425C60051ECACF78009DE6DD /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60041ECACF78009DE6DD /* ImageKey.swift */; };
 		425C60071ECADA81009DE6DD /* ExpenseCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C60061ECADA81009DE6DD /* ExpenseCalendar.swift */; };
+		425E16DC1EDE62FC00C98183 /* TagInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425E16DB1EDE62FC00C98183 /* TagInputView.swift */; };
 		42617CC61ED0EF73000F3DAD /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42617CC51ED0EF73000F3DAD /* HistoryTableViewCell.swift */; };
 		426C1BFA1ECBC1AF004BDC36 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1BF91ECBC1AF004BDC36 /* ProfileViewController.swift */; };
 		426C1BFF1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 426C1BFD1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld */; };
@@ -51,6 +53,9 @@
 		42AA1B0B1ED3B07F003697D6 /* UtilFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA1B0A1ED3B07F003697D6 /* UtilFactories.swift */; };
 		42C6AA301ED7877600F9FFCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6AA2F1ED7877600F9FFCF /* ProfileView.swift */; };
 		42D0A3021EDBA547004084F5 /* ChartFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0A3011EDBA547004084F5 /* ChartFormatters.swift */; };
+		42D9B5381EE4DFC5006F111A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D9B5371EE4DFC5006F111A /* String.swift */; };
+		42D9B53A1EE4E955006F111A /* MainLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D9B5391EE4E955006F111A /* MainLabel.swift */; };
+		42D9B53C1EE4F2D4006F111A /* NumberpadKeyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D9B53B1EE4F2D4006F111A /* NumberpadKeyConstants.swift */; };
 		4A70CCE2BD5DED4E3BAF4424 /* Pods_Tracker_JawnTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB42C473835A3381E7CE508A /* Pods_Tracker_JawnTests.framework */; };
 		4FF64CE6C6FB8ED98C80A562 /* Pods_Tracker_Jawn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B287768C249090155D2D93 /* Pods_Tracker_Jawn.framework */; };
 		C11DB46FB02E9C1B046AF266 /* Pods_Tracker_JawnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18263C821059B5F3C19D026 /* Pods_Tracker_JawnUITests.framework */; };
@@ -90,9 +95,11 @@
 		1952D7DA8E3715B54D9E77D7 /* Pods-Tracker JawnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker JawnTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker JawnTests/Pods-Tracker JawnTests.debug.xcconfig"; sourceTree = "<group>"; };
 		25B287768C249090155D2D93 /* Pods_Tracker_Jawn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tracker_Jawn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B04A020A882A77BD4B9C5E2 /* Pods-Tracker JawnUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker JawnUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker JawnUITests/Pods-Tracker JawnUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4257DD5A1EEDBAF7003DEAC1 /* AddExpenseToDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseToDayViewController.swift; sourceTree = "<group>"; };
 		425C5FFD1ECA8A93009DE6DD /* InputLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputLabelView.swift; path = ../InputLabelView.swift; sourceTree = "<group>"; };
 		425C60041ECACF78009DE6DD /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
 		425C60061ECADA81009DE6DD /* ExpenseCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCalendar.swift; sourceTree = "<group>"; };
+		425E16DB1EDE62FC00C98183 /* TagInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagInputView.swift; sourceTree = "<group>"; };
 		42617CC51ED0EF73000F3DAD /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		426C1BF91ECBC1AF004BDC36 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		426C1BFE1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrackerJawn.xcdatamodel; sourceTree = "<group>"; };
@@ -139,6 +146,9 @@
 		42AA1B0A1ED3B07F003697D6 /* UtilFactories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilFactories.swift; sourceTree = "<group>"; };
 		42C6AA2F1ED7877600F9FFCF /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		42D0A3011EDBA547004084F5 /* ChartFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartFormatters.swift; sourceTree = "<group>"; };
+		42D9B5371EE4DFC5006F111A /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		42D9B5391EE4E955006F111A /* MainLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLabel.swift; sourceTree = "<group>"; };
+		42D9B53B1EE4F2D4006F111A /* NumberpadKeyConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberpadKeyConstants.swift; sourceTree = "<group>"; };
 		585D1C2312A763660EED0F53 /* Pods-Tracker Jawn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker Jawn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker Jawn/Pods-Tracker Jawn.release.xcconfig"; sourceTree = "<group>"; };
 		9DD690B8F2E1738F46A06FFB /* Pods-Tracker JawnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker JawnTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker JawnTests/Pods-Tracker JawnTests.release.xcconfig"; sourceTree = "<group>"; };
 		B4E1A80DA09C8EB16A422278 /* Pods-Tracker Jawn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracker Jawn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tracker Jawn/Pods-Tracker Jawn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,14 +188,10 @@
 		425C5FFF1ECA8B2B009DE6DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				425C5FFD1ECA8A93009DE6DD /* InputLabelView.swift */,
-				428021FB1ECA3DFA003E8F96 /* NumberKey.swift */,
-				425C60041ECACF78009DE6DD /* ImageKey.swift */,
-				428021FF1ECA6445003E8F96 /* NumberPad.swift */,
-				42617CC51ED0EF73000F3DAD /* HistoryTableViewCell.swift */,
-				426C6D151ED24DF1001419B3 /* DailyHistoryTableViewCell.swift */,
-				42C6AA2F1ED7877600F9FFCF /* ProfileView.swift */,
-				4294ABFB1ED8F00A00D5CC52 /* ProfileStatView.swift */,
+				42D9B5391EE4E955006F111A /* MainLabel.swift */,
+				425E16D81EDE496C00C98183 /* Main Screen */,
+				425E16D91EDE497400C98183 /* Profile View */,
+				425E16DA1EDE499000C98183 /* History View */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -214,6 +220,45 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		425E16D51EDE330500C98183 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				428021E51EC8E452003E8F96 /* MainViewController.swift */,
+			);
+			name = "Main Screen";
+			sourceTree = "<group>";
+		};
+		425E16D81EDE496C00C98183 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				425C5FFD1ECA8A93009DE6DD /* InputLabelView.swift */,
+				428021FB1ECA3DFA003E8F96 /* NumberKey.swift */,
+				42D9B53B1EE4F2D4006F111A /* NumberpadKeyConstants.swift */,
+				425C60041ECACF78009DE6DD /* ImageKey.swift */,
+				428021FF1ECA6445003E8F96 /* NumberPad.swift */,
+				425E16DB1EDE62FC00C98183 /* TagInputView.swift */,
+			);
+			name = "Main Screen";
+			sourceTree = "<group>";
+		};
+		425E16D91EDE497400C98183 /* Profile View */ = {
+			isa = PBXGroup;
+			children = (
+				42C6AA2F1ED7877600F9FFCF /* ProfileView.swift */,
+				4294ABFB1ED8F00A00D5CC52 /* ProfileStatView.swift */,
+			);
+			name = "Profile View";
+			sourceTree = "<group>";
+		};
+		425E16DA1EDE499000C98183 /* History View */ = {
+			isa = PBXGroup;
+			children = (
+				42617CC51ED0EF73000F3DAD /* HistoryTableViewCell.swift */,
+				426C6D151ED24DF1001419B3 /* DailyHistoryTableViewCell.swift */,
+			);
+			name = "History View";
+			sourceTree = "<group>";
+		};
 		426C1C3F1ECCD245004BDC36 /* DataManagers */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +275,7 @@
 				42779DA91ECE7ED000F8628E /* NSDate.swift */,
 				42779DA61ECE7EC400F8628E /* Date.swift */,
 				4294ABFD1EDA0E7A00D5CC52 /* UIColor.swift */,
+				42D9B5371EE4DFC5006F111A /* String.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -246,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				428021E71EC93044003E8F96 /* MainTabBarController.swift */,
-				428021E51EC8E452003E8F96 /* MainViewController.swift */,
+				425E16D51EDE330500C98183 /* Main Screen */,
 				42AA1B061ED3AE3D003697D6 /* Profile View Controllers */,
 				426C6D121ED22B02001419B3 /* History View Controllers */,
 			);
@@ -257,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				426C6D0E1ED22511001419B3 /* HistoryNavController.swift */,
+				4257DD5A1EEDBAF7003DEAC1 /* AddExpenseToDayViewController.swift */,
 				428021F11EC938D8003E8F96 /* HistoryTableViewController.swift */,
 				426C6D131ED22B50001419B3 /* SingleDayTableViewController.swift */,
 			);
@@ -690,11 +737,14 @@
 				42C6AA301ED7877600F9FFCF /* ProfileView.swift in Sources */,
 				42726D961ED35400006D821B /* TJWeek.swift in Sources */,
 				42AA1B0B1ED3B07F003697D6 /* UtilFactories.swift in Sources */,
+				42D9B5381EE4DFC5006F111A /* String.swift in Sources */,
 				4294ABFE1EDA0E7A00D5CC52 /* UIColor.swift in Sources */,
 				425C60051ECACF78009DE6DD /* ImageKey.swift in Sources */,
+				425E16DC1EDE62FC00C98183 /* TagInputView.swift in Sources */,
 				426C1C481ECD2C77004BDC36 /* TJDateTest_Initializer.swift in Sources */,
 				426C1C441ECD2041004BDC36 /* TJDate.swift in Sources */,
 				426C1C411ECCD25F004BDC36 /* CoreDataManager.swift in Sources */,
+				4257DD5B1EEDBAF7003DEAC1 /* AddExpenseToDayViewController.swift in Sources */,
 				4294ABFC1ED8F00A00D5CC52 /* ProfileStatView.swift in Sources */,
 				428022001ECA6445003E8F96 /* NumberPad.swift in Sources */,
 				428021B81EC8D6FE003E8F96 /* AppDelegate.swift in Sources */,
@@ -704,6 +754,7 @@
 				425C5FFE1ECA8A93009DE6DD /* InputLabelView.swift in Sources */,
 				426C6D161ED24DF1001419B3 /* DailyHistoryTableViewCell.swift in Sources */,
 				42617CC61ED0EF73000F3DAD /* HistoryTableViewCell.swift in Sources */,
+				42D9B53C1EE4F2D4006F111A /* NumberpadKeyConstants.swift in Sources */,
 				428021E61EC8E452003E8F96 /* MainViewController.swift in Sources */,
 				425C60071ECADA81009DE6DD /* ExpenseCalendar.swift in Sources */,
 				428021E81EC93044003E8F96 /* MainTabBarController.swift in Sources */,
@@ -712,6 +763,7 @@
 				426C6D141ED22B50001419B3 /* SingleDayTableViewController.swift in Sources */,
 				42779DAA1ECE7ED000F8628E /* NSDate.swift in Sources */,
 				426C1BFF1ECC1FEC004BDC36 /* TrackerJawn.xcdatamodeld in Sources */,
+				42D9B53A1EE4E955006F111A /* MainLabel.swift in Sources */,
 				42779DA71ECE7EC400F8628E /* Date.swift in Sources */,
 				426C1BFA1ECBC1AF004BDC36 /* ProfileViewController.swift in Sources */,
 				428021FE1ECA4C50003E8F96 /* Literals.swift in Sources */,

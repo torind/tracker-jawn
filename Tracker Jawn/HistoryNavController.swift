@@ -11,6 +11,7 @@ import UIKit
 class HistoryNavController: UINavigationController, UINavigationControllerDelegate {
     var expenseCalendar : ExpenseCalendar?
     var historyViewController : HistoryTableViewController?
+    var controllerDate : TJDate?
     
     init(expenseCalendar : ExpenseCalendar) {
         self.expenseCalendar = expenseCalendar
@@ -45,6 +46,20 @@ class HistoryNavController: UINavigationController, UINavigationControllerDelega
                                              target: self,
                                              action: #selector(backButtonPressed(_:)))
             viewController.navigationItem.setLeftBarButton(backButton, animated: false)
+        }
+        if let controller = viewController as? SingleDayTableViewController {
+            controllerDate = controller.date
+            let plusButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                             target: self,
+                                             action: #selector(plusButtonPressed(_:)))
+            controller.navigationItem.setRightBarButton(plusButton, animated: false)
+        }
+    }
+    
+    func plusButtonPressed(_ param : Bool) {
+        if (controllerDate != nil) {
+            let addController = AddExpenseToDayViewController(date: controllerDate!)
+            self.pushViewController(addController, animated: false)
         }
     }
     

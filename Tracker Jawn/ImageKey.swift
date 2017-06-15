@@ -19,8 +19,8 @@ class ImageKey: UIView {
     init(frame: CGRect, imgName : String) {
         super.init(frame: frame)
         self.imageName = imgName
-        addImage()
         addOutline()
+        addImage()
     }
     
     convenience init() {
@@ -36,6 +36,7 @@ class ImageKey: UIView {
         circleLayer.frame.size = CGSize(width: frame.width - CGFloat(2 * XPADDING), height: frame.height - CGFloat(2 * YPADDING))
         circleLayer.frame.origin = CGPoint(x: XPADDING, y: YPADDING)
         drawCircleContainer()
+        addShadow()
         
         imageView.frame.size = CGSize(width: frame.width - 2 * IMAGE_PADDING, height: frame.height  - 2 * IMAGE_PADDING)
         imageView.frame.origin = CGPoint(x: IMAGE_PADDING, y: IMAGE_PADDING)
@@ -48,11 +49,20 @@ class ImageKey: UIView {
         self.addSubview(imageView)
     }
     
+    func addShadow() {
+        let shadowPath = UIBezierPath(cgPath: circleLayer.path!)
+        circleLayer.masksToBounds = false;
+        circleLayer.shadowColor = UIColor.black.cgColor
+        circleLayer.shadowOffset = NumberpadKeyConstants.offset
+        circleLayer.shadowOpacity = Float(NumberpadKeyConstants.opacity)
+        circleLayer.shadowPath = shadowPath.cgPath
+    }
+    
     func addOutline() {
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: 50,y: 50), radius: 50, startAngle: 0, endAngle: CGFloat(M_PI * 2), clockwise: true)
         
         circleLayer.path = circlePath.cgPath
-        circleLayer.fillColor = UIColor.clear.cgColor
+        circleLayer.fillColor = Constants.BACKGROUND_COLOR.cgColor
         circleLayer.strokeColor = Constants.THEME_COLOR.cgColor
         circleLayer.lineWidth = 3.0
         

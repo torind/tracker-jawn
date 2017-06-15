@@ -56,7 +56,18 @@ class HistoryTableViewController: UITableViewController, UINavigationControllerD
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(sections[section])"
+        if (section >= sections.count) {
+            let week = expenseCalendar.weekOf(offset: section)
+            let weekDates = week!.getDescendingDates()
+            let sunday = weekDates[0]
+            let monday = weekDates[6]
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMM d"
+            return "\(formatter.string(from: monday.date!.toDate())) - \(formatter.string(from: sunday.date!.toDate()))"
+        }
+        else {
+            return "\(sections[section])"
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

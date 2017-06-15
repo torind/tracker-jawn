@@ -38,6 +38,7 @@ class ProfileViewController: UIViewController {
         profileView!.setMonthlyField(text:
             Util.formatCurrency(amount: expenseCalendar.movingAverage(numDays: 30)))
         setViewChartData()
+        profileView.resetViewport()
     }
     
     func setViewChartData() {

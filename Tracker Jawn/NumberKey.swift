@@ -19,8 +19,8 @@ class NumberKey: UIView {
     init(frame: CGRect, label: String) {
         text = label
         super.init(frame: frame)
-        addText(text : label)
         addOutline()
+        addText(text : label)
     }
     
     convenience init() {
@@ -44,11 +44,20 @@ class NumberKey: UIView {
         self.addSubview(label)
     }
     
+    func addShadow() {
+        let shadowPath = UIBezierPath(cgPath: circleLayer.path!)
+        circleLayer.masksToBounds = false;
+        circleLayer.shadowColor = UIColor.black.cgColor
+        circleLayer.shadowOffset = NumberpadKeyConstants.offset
+        circleLayer.shadowOpacity = Float(NumberpadKeyConstants.opacity)
+        circleLayer.shadowPath = shadowPath.cgPath
+    }
+    
     func addOutline() {
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: 50,y: 50), radius: 50, startAngle: 0, endAngle: CGFloat(M_PI * 2), clockwise: true)
         
         circleLayer.path = circlePath.cgPath
-        circleLayer.fillColor = UIColor.clear.cgColor
+        circleLayer.fillColor = Constants.BACKGROUND_COLOR.cgColor
         circleLayer.strokeColor = Constants.THEME_COLOR.cgColor
         circleLayer.lineWidth = 3.0
         
@@ -63,6 +72,7 @@ class NumberKey: UIView {
         circleLayer.frame.size = CGSize(width: frame.width - CGFloat(2 * XPADDING), height: frame.height - CGFloat(2 * YPADDING))
         circleLayer.frame.origin = CGPoint(x: XPADDING, y: YPADDING)
         drawCircleContainer()
+        addShadow()
     }
     
     // draw new circle container based on frame dimensions

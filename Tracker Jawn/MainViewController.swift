@@ -8,8 +8,10 @@
 
 import UIKit
 
-class MainViewController: UIViewController, NumberpadTouchDelegate {
+class MainViewController: UIViewController, NumberpadTouchDelegate, UIGestureRecognizerDelegate {
     var expenseCalendar : ExpenseCalendar
+    let that = self
+    var state : MAIN_STATE = .amountInput
     
     init(expenseCalendar : ExpenseCalendar) {
         self.expenseCalendar = expenseCalendar
@@ -26,8 +28,7 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
         view.addSubview(dailyUsageLabel)
         view.addSubview(dailyUsageCount)
         view.addSubview(userInputLabel)
-        view.addSubview(numberpad)
-        view.setNeedsUpdateConstraints()
+        
         view.backgroundColor = Constants.BACKGROUND_COLOR
         updateDailyTotal()
     }
@@ -36,13 +37,48 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
         updateDailyTotal()
     }
     
-    override func updateViewConstraints() {
-        imageViewConstraints()
-        dailyUsageLabelConstraints()
-        dailyUsageCountConstraints()
-        userInputConstraints()
-        numberpadConstraints()
-        super.updateViewConstraints()
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let iv_hPad = CGFloat(20.0)
+        let iv_tPad = CGFloat(10.0)
+        let ivWidth = view.frame.width - 2 * iv_hPad
+        imageView.frame = CGRect(x: iv_hPad, y: UIApplication.shared.statusBarFrame.height + iv_tPad,
+                                 width: ivWidth, height: ivWidth * 0.388)
+        
+        let dul_tPad = CGFloat(40.0)
+        dailyUsageLabel.frame = CGRect(x: 0.0, y: imageView.frame.height + dul_tPad,
+                                       width: view.frame.width, height: 24.0)
+        
+        let duc_tPad = CGFloat(2.0)
+        dailyUsageCount.frame = CGRect(x: 0.0, y: dailyUsageLabel.frame.maxY + duc_tPad,
+                                       width: view.frame.width, height: 30.0)
+        
+        let uil_hPad = CGFloat(90.0)
+        let uil_tPad = CGFloat(15.0)
+        userInputLabel.frame = CGRect(x: uil_hPad, y: dailyUsageCount.frame.maxY + uil_tPad,
+                                      width: view.frame.width - 2 * uil_hPad, height: 40.0)
+        if (state == .amountInput) {
+            tagView.removeFromSuperview()
+            view.addSubview(numberpad)
+            let np_tPad = CGFloat(20.0)
+            let np_hPad = CGFloat(30.0)
+            numberpad.frame = CGRect(x: np_hPad,
+                                     y: userInputLabel.frame.maxY + np_tPad,
+                                     width: view.frame.width - 2 * np_hPad,
+                                     height: view.frame.height * 0.465)
+        }
+        else if (state == .tagInput) {
+            numberpad.removeFromSuperview()
+            view.addSubview(tagView)
+            let np_tPad = CGFloat(20.0)
+            let np_hPad = CGFloat(30.0)
+            tagView.frame = CGRect(x: np_hPad,
+                                     y: userInputLabel.frame.maxY + np_tPad,
+                                     width: view.frame.width - 2 * np_hPad,
+                                     height: view.frame.height * 0.465)
+        }
     }
     
     func updateDailyTotal() {
@@ -64,25 +100,36 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
         }
     }
     
+    func handleSwipe(_ gr : UIGestureRecognizer) {
+        if let sgr = gr as? UISwipeGestureRecognizer {
+            if (sgr.direction == .left) {
+                self.state = .tagInput
+            }
+            else if (sgr.direction == .right){
+                self.state = .amountInput
+            }
+            view.setNeedsLayout()
+        }
+    }
+    
     // ~~~~ SUBVIEWS ~~~~ //
     lazy var imageView: UIImageView! = {
         let view = UIImageView()
         view.image = UIImage(named: "tracker-jawn-logo")
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = UIViewContentMode.scaleAspectFit
         return view
     }()
     
     lazy var dailyUsageLabel : UILabel! = {
         let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
+        view.font = UIFont(name: "HelveticaNeue", size: 20.0)
         view.text = "Today's Spending:"
+        view.textAlignment = .center
         return view
     }()
     
     lazy var dailyUsageCount : UILabel! = {
         let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.boldSystemFont(ofSize: 24.0)
         view.textAlignment = .center
         view.text = ""
@@ -91,203 +138,35 @@ class MainViewController: UIViewController, NumberpadTouchDelegate {
     
     lazy var userInputLabel : InputLabelView! = {
         let view = InputLabelView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     lazy var numberpad : UIView! = {
         var view = NumberPad()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.touchDelegate = self
+        let sgr = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        sgr.delegate = self
+        sgr.direction = .left
+        view.addGestureRecognizer(sgr)
+        return view
+    }()
+    
+    lazy var tagView : TagInputView = {
+        var view = TagInputView()
+        let sgr = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        sgr.delegate = self
+        sgr.direction = .right
+        view.addGestureRecognizer(sgr)
         return view
     }()
 
-    
-    // ~~~~ CONSTRAINTS ~~~~ //
-    func imageViewConstraints() {
-        
-        NSLayoutConstraint(
-            item: imageView,
-            attribute: .centerX,
-            relatedBy: .equal,
-            toItem: view,
-            attribute: .centerX,
-            multiplier: 1.0,
-            constant: 0.0)
-            .isActive = true
-        
-        NSLayoutConstraint(
-            item: imageView,
-            attribute: .width,
-            relatedBy: .equal,
-            toItem: view,
-            attribute: .width,
-            multiplier: 0.9,
-            constant: 0.0)
-            .isActive = true
-        
-        NSLayoutConstraint(
-            item: imageView,
-            attribute: .top,
-            relatedBy: .equal,
-            toItem: view,
-            attribute: .top,
-            multiplier: 1.0,
-            constant: 0.0)
-            .isActive = true
-    }
-    
-    func dailyUsageLabelConstraints() {
-        NSLayoutConstraint(
-            item: dailyUsageLabel,
-            attribute: .centerX,
-            relatedBy: .equal,
-            toItem: view,
-            attribute: .centerX,
-            multiplier: 1.0,
-            constant: 0.0)
-            .isActive = true
-        
-        NSLayoutConstraint(
-            item: dailyUsageLabel,
-            attribute: .top,
-            relatedBy: .equal,
-            toItem: imageView,
-            attribute: .bottom,
-            multiplier: 1.0,
-            constant: -30.0)
-            .isActive = true
-        
-        NSLayoutConstraint(
-            item: dailyUsageLabel,
-            attribute: .width,
-            relatedBy: .equal,
-            toItem: view,
-            attribute: .width,
-            multiplier: 0.4,
-            constant: 0.0)
-            .isActive = true
-        
-    }
-    
-    func dailyUsageCountConstraints() {
-        NSLayoutConstraint(
-            item: dailyUsageCount,
-            attribute: .centerX,
-            relatedBy: .equal,
-            toItem: view,
-            attribute: .centerX,
-            multiplier: 1.0,
-            constant: 0.0)
-            .isActive = true
-        
-        NSLayoutConstraint(
-            item: dailyUsageCount,
-            attribute: .top,
-            relatedBy: .equal,
-            toItem: dailyUsageLabel,
-            attribute: .bottom,
-            multiplier: 1.0,
-            constant: 5.0)
-            .isActive = true
-        
-        NSLayoutConstraint(
-            item: dailyUsageCount,
-            attribute: .width,
-            relatedBy: .equal,
-            toItem: view,
-            attribute: .width,
-            multiplier: 0.4,
-            constant: 0.0)
-            .isActive = true
-        
-    }
-    
-    func userInputConstraints() {
-        NSLayoutConstraint(
-            item: userInputLabel,
-            attribute: .centerX,
-            relatedBy: .equal,
-            toItem: view,
-            attribute: .centerX,
-            multiplier: 1.0,
-            constant: 0.0)
-            .isActive = true
-        
-        NSLayoutConstraint(
-            item: userInputLabel,
-            attribute: .top,
-            relatedBy: .equal,
-            toItem: dailyUsageCount,
-            attribute: .bottom,
-            multiplier: 1.0,
-            constant: 10.0)
-            .isActive = true
-        
-        NSLayoutConstraint(
-            item: userInputLabel,
-            attribute: .width,
-            relatedBy: .equal,
-            toItem: view,
-            attribute: .width,
-            multiplier: 1.0,
-            constant: -200)
-            .isActive = true
-        
-        NSLayoutConstraint(
-            item: userInputLabel,
-            attribute: .height,
-            relatedBy: .equal,
-            toItem: nil,
-            attribute: .notAnAttribute,
-            multiplier: 1.0,
-            constant: 40.0)
-            .isActive = true
-    }
-    
-    func numberpadConstraints() {
-        NSLayoutConstraint(
-            item: numberpad,
-            attribute: .centerX,
-            relatedBy: .equal,
-            toItem: view,
-            attribute: .centerX,
-            multiplier: 1.0,
-            constant: 0.0)
-            .isActive = true
-        
-        NSLayoutConstraint(
-            item: numberpad,
-            attribute: .top,
-            relatedBy: .equal,
-            toItem: userInputLabel,
-            attribute: .bottom,
-            multiplier: 1.0,
-            constant: 20.0)
-            .isActive = true
-        
-        NSLayoutConstraint(
-            item: numberpad,
-            attribute: .width,
-            relatedBy: .equal,
-            toItem: view,
-            attribute: .width,
-            multiplier: 1.0,
-            constant: -80.0)
-            .isActive = true
-        
-        NSLayoutConstraint(
-            item: numberpad,
-            attribute: .bottom,
-            relatedBy: .equal,
-            toItem: view,
-            attribute: .bottom,
-            multiplier: 1.0,
-            constant: -60.0)
-            .isActive = true
-    }
 }
 
 protocol NumberpadTouchDelegate {
     func handleTouch(tag : Int) // ...or class methods
+}
+
+enum MAIN_STATE {
+    case amountInput
+    case tagInput
 }

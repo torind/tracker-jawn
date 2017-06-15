@@ -23,14 +23,15 @@ class ProfileView: UIView {
     lazy var monthlyUsageView = ProfileStatView("30 DAY AVG:")
     
     lazy var chart : LineChartView = {
-        let c = LineChartView(frame: CGRect.zero)
+        let c = LineChartView(frame: self.frame)
+        
         c.dragEnabled = true
         c.dragDecelerationEnabled = true
-        c.setScaleEnabled(false)
         c.doubleTapToZoomEnabled = false
         c.highlightPerTapEnabled = false
         c.highlightPerDragEnabled = false
-
+        c.scaleXEnabled = true
+        c.scaleYEnabled = false
         c.drawGridBackgroundEnabled = false
         c.isOpaque = false
         c.gridBackgroundColor = UIColor.clear
@@ -57,6 +58,7 @@ class ProfileView: UIView {
         c.legend.enabled = false
         c.chartDescription?.text = ""
         c.rightAxis.enabled = false
+        c.autoScaleMinMaxEnabled = true
         return c
     }()
     
@@ -83,7 +85,6 @@ class ProfileView: UIView {
         super.layoutSubviews()
         
         gradient.frame = bounds
-        
         
         let cPadding = [0.0, 20.0, 0.0, 0.0] //left, top, right, bottom
         let visibleHeight = controller?.getVisibleHeight() ?? frame.height
@@ -143,8 +144,8 @@ class ProfileView: UIView {
     
     func setLineChartData(data : LineChartData) {
         chart.data = data
+        chart.setVisibleXRangeMinimum(7.0)
         chart.notifyDataSetChanged()
-        chart.setVisibleXRangeMaximum(7.0)
     }
     
     func createGradientOverlay() {
@@ -154,5 +155,17 @@ class ProfileView: UIView {
         gradient.colors = [light, dark]
         self.layer.addSublayer(gradient)
     }
-
+    
+    func resetViewport() {
+        let numPointsToShow = 7.0
+        if (chart.data == nil) {
+            return
+        }
+        else {
+            let totalPoints = Double(chart.data!.entryCount)
+            let scaleX = totalPoints / numPointsToShow
+            chart.zoom(scaleX: CGFloat(scaleX), scaleY: 1.0, x: 0.0, y: 0.0)
+            chart.moveViewToX(totalPoints - numPointsToShow)
+        }
+    }
 }
